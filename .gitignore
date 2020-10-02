@@ -1,0 +1,7 @@
+# directory patterns
+_*/
+# file patterns
+*-dev.*
+dev-*.*
+dev.*
+*.swp
