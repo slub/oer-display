@@ -1,0 +1,70 @@
+* { font-family:'Bitter',serif }
+
+.filter { grid-area: filter; }
+.item1 {
+  grid-area: fst;
+  margin-left: auto;
+  margin-right: auto;
+  height: 333px;
+  width: 300px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.item2 {
+  grid-area: scnd;
+  margin-left: auto;
+  margin-right: auto;
+  height: 335px;
+  width: 300px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.item3 {
+  grid-area: thrd;
+  margin-left: auto;
+  margin-right: auto;
+  height: 335px;
+  width: 300px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.item4 {
+  grid-area: frth;
+  margin-left: auto;
+  margin-right: auto;
+  height: 335px;
+  width: 300px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.item5 { grid-area: ffth; margin-left: auto; margin-right: auto; }
+.item6 {
+  grid-area: sxth;
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+img { width: 300px; height: 300px; }
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'filter fst scnd thrd'
+    'filter frth ffth sxth';
+  grid-gap: 10px;
+  background-color: #87cdd7;
+  padding: 10px;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255);
+  font-size: 20px;
+}
