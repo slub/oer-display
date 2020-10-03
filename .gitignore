@@ -4,4 +4,6 @@ _*/
 *-dev.*
 dev-*.*
 dev.*
+# file type patterns
 *.swp
+*.kate-swp
