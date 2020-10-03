@@ -1,0 +1,73 @@
+[
+  {
+    "title": "Vorträge zur Linguistik und Sprachgeschichte des Deutschen",
+    "author": "Alexander Lasch",
+    "institution": "TUD",
+    "image": "assets/img/oer-podcast.jpg",
+    "license": null,
+    "url": "https://open.spotify.com/show/3GwEHw4jqYnKbWi8HZziEn"
+  }, {
+    "title": "Tools und Tutorials",
+    "author": "Simon Meier-Vieracker",
+    "institution": "TUD",
+    "image": "assets/img/to_tut.png",
+    "license": "CC BY",
+    "url": "https://www.youtube.com/playlist?list=PLGlksHy9A8eRPiimSUcYaARVPKeMGxWlY"
+  }, {
+    "title": "Gestaltung von Lehr- und Lernprozessen",
+    "author": "Thomas Köhler",
+    "institution": "TUD",
+    "image": "assets/img/oer-koehler.jpg",
+    "license": null,
+    "url": "https://bildungsportal.sachsen.de/opal/auth/RepositoryEntry/532971550"
+  }, {
+    "title": "Materialien zur Lehre ab dem SoSe 2018",
+    "author": "Alexander Lasch",
+    "institution": "TUD",
+    "image": "assets/img/oer-material.jpg",
+    "license": null,
+    "url": "https://www.gls-dresden.de/tag/lasch/"
+  }, {
+    "title": "Barrierefreier Audioguide für die Albrechtsburg Meissen",
+    "author": "Alexander Lasch",
+    "institution": "TUD",
+    "image": "assets/img/oer-audioguide.jpg",
+    "license": null,
+    "url": "https://gls-dresden.de/BLOG/Albrechtsburg/index.php"
+  }, {
+    "title": "Vom Thema zum Volltext",
+    "author": "Kathleen Hoffmann",
+    "institution": "SLUB",
+    "image": "assets/img/oer-slub001.jpg",
+    "license": "CC BY",
+    "url": "https://bildungsportal.sachsen.de/opal/auth/RepositoryEntry/18216648709"
+  }, {
+    "title": "Literatur erfassen, verwalten und zitieren",
+    "author": "Kathleen Hoffmann",
+    "institution": "SLUB",
+    "image": "assets/img/oer-slub002.jpg",
+    "license": "CC BY",
+    "url": "https://bildungsportal.sachsen.de/opal/auth/RepositoryEntry/23157637126"
+  }, {
+    "title": "Grundlagen der politikwissenschaftlichen Systemanalyse",
+    "author": "Werner J. Patzelt",
+    "institution": "TUD",
+    "image": "assets/img/oer-patzelt.jpg",
+    "license": null,
+    "url": "https://tu-dresden.de/gsw/phil/powi/polsys/forschung/projekte/mooc-polsys"
+  }, {
+    "title": "Wissenschaftskommunikation 2.0",
+    "author": "Simon Meier-Vieracker",
+    "institution": "TUD",
+    "image": "assets/img/oer-meier002.jpg",
+    "license": null,
+    "url": "https://www.youtube.com/playlist?list=PLGlksHy9A8eTc8MqvtqoBK8IEqO7Mof8O"
+  }, {
+    "title": "Digitale Lehre. Tutorials zur technischen Unterstützung",
+    "author": "Alexander Lasch",
+    "institution": "TUD",
+    "image": "assets/img/oer-tutorial.jpg",
+    "license": null,
+    "url": "https://www.youtube.com/playlist?list=PLzwHQfOPWZDFaUFQZauV02gCcFYQAUGSO"
+  }
+]
