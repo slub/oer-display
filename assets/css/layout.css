@@ -1,55 +1,71 @@
 * { font-family:'Open Sans',sans }
 
-.filter { grid-area: filter; }
+.facet h2
+{
+  color: #00afc8;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.facet
+{
+  padding: 10px 5px;
+  background: #ffffff;
+}
+.box {
+  background-color: #f2fafa;
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  margin-bottom: 2px;
+}
+.filter
+{
+  grid-area: filter;
+}
 .item1 {
   grid-area: fst;
   margin-left: auto;
   margin-right: auto;
-  height: 333px;
+  height: 300px;
   width: 300px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 .item2 {
   grid-area: scnd;
   margin-left: auto;
   margin-right: auto;
-  height: 335px;
+  height: 300px;
   width: 300px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 .item3 {
   grid-area: thrd;
   margin-left: auto;
   margin-right: auto;
-  height: 335px;
+  height: 300px;
   width: 300px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 .item4 {
   grid-area: frth;
   margin-left: auto;
   margin-right: auto;
-  height: 335px;
+  height: 300px;
   width: 300px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
-.item5 { grid-area: ffth; margin-left: auto; margin-right: auto; }
+.item5 {
+  grid-area: ffth;
+  margin-left: auto;
+  margin-right: auto;
+  height: 300px;
+  width: 300px;
+}
 .item6 {
   grid-area: sxth;
   margin-left: auto;
   margin-right: auto;
+  height: 300px;
   width: 300px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 img { width: 300px; height: 300px; }
@@ -57,14 +73,14 @@ img { width: 300px; height: 300px; }
 .grid-container {
   display: grid;
   grid-template-areas:
-    'filter fst scnd thrd'
-    'filter frth ffth sxth';
+    'fst scnd thrd filter'
+    'frth ffth sxth filter';
   grid-gap: 10px;
-  background-color: #87cdd7;
+  background-color: rgba(255, 255, 255);
   padding: 10px;
 }
 
 .grid-container > div {
-  background-color: rgba(255, 255, 255);
+  background-color: #f2fafa;
   font-size: 20px;
 }
