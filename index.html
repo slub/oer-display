@@ -101,21 +101,49 @@ function un_show_details_second() {
         </header>
       </header>
     </div>
-    <b>Typ</b><br/>
-    <input type="checkbox" id="type_video">Video</input><br/>
-    <input type="checkbox" id="type_tutorial">Tutorial</input><br/>
-    <input type="checkbox" id="type_slides">Präsentation</input><br/>
-    <input type="checkbox" id="type_podcast">Podcast</input>
-    <br/>
-    <b>Format</b><br/>
-    <input type="checkbox" id="fmt_pdf">PDF</input><br/>
-    <input type="checkbox" id="fmt_youtube">Youtube</input><br/>
-    <input type="checkbox" id="fmt_opal">OPAL</input>
-    <br/>
-    <b>Lizenz</b><br/>
-    <input type="checkbox" id="lic_cc_0">CC 0</input><br/>
-    <input type="checkbox" id="lic_cc_by">CC BY</input><br/>
-    <input type="checkbox" id="lic_cc_by_sa">CC BY SA</input>
+    <div class="facet">
+      <header>
+        <h2 class="box">
+          <span aria-hidden="true">>&thinsp;</span>
+          Typ
+        </h2>
+        <header class=box>
+	  <input type="checkbox" id="type_video">Video</input><br/>
+	  <input type="checkbox" id="type_tutorial">Tutorial</input><br/>
+	  <input type="checkbox" id="type_slides">Präsentation</input><br/>
+	  <input type="checkbox" id="type_podcast">Podcast</input>
+          <br/>
+        </header>
+      </header>
+    </div>
+    <div class="facet">
+      <header>
+        <h2 class="box">
+          <span aria-hidden="true">>&thinsp;</span>
+          Format
+        </h2>
+        <header class=box>
+          <input type="checkbox" id="fmt_pdf">PDF</input><br/>
+          <input type="checkbox" id="fmt_youtube">Youtube</input><br/>
+          <input type="checkbox" id="fmt_opal">OPAL</input>
+          <br/>
+        </header>
+      </header>
+    </div>
+    <div class="facet">
+      <header>
+        <h2 class="box">
+          <span aria-hidden="true">>&thinsp;</span>
+          Lizenz
+        </h2>
+        <header class=box>
+          <input type="checkbox" id="lic_cc_0">CC 0</input><br/>
+          <input type="checkbox" id="lic_cc_by">CC BY</input><br/>
+          <input type="checkbox" id="lic_cc_by_sa">CC BY SA</input>
+          <br/>
+        </header>
+      </header>
+    </div>
     <br/>
     <button onclick="filter()">Filter</button>
   </div>

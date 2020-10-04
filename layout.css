@@ -16,7 +16,7 @@
   background-color: #f2fafa;
   width: 100%;
   padding-left: 15px;
-  padding-right: 15px;
+  padding-right: 0px;
   padding-top: 10px;
   padding-bottom: 5px;
   margin-bottom: 2px;
@@ -100,7 +100,6 @@ img { width: 300px; height: 300px; }
     'svnth egth nnth filter';
   grid-gap: 10px;
   background-color: rgba(255, 255, 255);
-  padding: 10px;
 }
 
 .grid-container > div {
