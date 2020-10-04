@@ -1,3 +1,5 @@
+var metadata = [];
+
 // function for requesting and processing JSON data
 function loadJSON(path, func) {
   var xobj = new XMLHttpRequest();
@@ -26,29 +28,45 @@ function createNode(tag,id=null,className=null,type=null) {
   return elem;
 }
 
-// function for adding content to given grid
-function addContent(grid,oer) {
-  let img = createNode('img');
-  img.src = oer.image
-  grid.appendChild(img)
-}
-
 // initialize content and create display
 function init() {
  loadJSON("assets/data/content.json", function(response) {
-  var metadata = JSON.parse(response);
-  console.log(metadata)
-  let grid1st = document.getElementById('first');
-  addContent(grid1st, metadata[0])
-  let grid2nd = document.getElementById('second');
-  addContent(grid2nd, metadata[1])
-  let grid3rd = document.getElementById('third');
-  addContent(grid3rd, metadata[2])
-  let grid4th = document.getElementById('fourth');
-  addContent(grid4th, metadata[3])
-  let grid5th = document.getElementById('fifth');
-  addContent(grid5th, metadata[4])
-  let grid6th = document.getElementById('sixth');
-  addContent(grid6th, metadata[5])
+  metadata = JSON.parse(response);
+  display(metadata)
  });
+}
+
+// create display by filling grid with metadata
+function display(content) {
+  let grid = document.getElementById('oer');
+  grid.innerHTML = ""; // ensure empty grid
+  for (i=0; i < content.length; i++) {
+      addContent(grid, content[i])
+  }
+}
+
+// function for adding content to given grid
+function addContent(grid,oer) {
+  let li = createNode('li');
+  let figure = createNode('figure');
+  let img = createNode('img');
+  img.src = oer.image
+  figure.appendChild(img)
+  li.appendChild(figure)
+  grid.appendChild(li)
+}
+
+// filter content by user selected facets
+function facet() {
+    var tud = document.getElementById("inst_tud").checked
+    var slub = document.getElementById("inst_slub").checked
+    if (!tud & slub) {
+        display(metadata.filter(resource => resource.institution.includes('SLUB')))
+    }
+    if (tud & !slub) {
+        display(metadata.filter(resource => resource.institution.includes('TUD')))
+    }
+    if (!tud & !slub) {
+      display(metadata)
+    }
 }

@@ -1,51 +1,143 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="de-DE">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>OER Display</title>
     <!-- Description -->
-    <meta name="description" content="Prototyp für die Präsentation einer Good-Practice-Sammlung von OER">
+    <meta name="description" content="Prototyp für die Präsentation einer Good-Practice-Sammlung von OER" />
     <!-- Mobile -->
-    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <meta name="viewport" content="width=device-width initial-scale=1.0" />
     <!-- Styles -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans" media="all">
-    <link rel="stylesheet" type="text/css" href="assets/css/layout.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans" media="all" />
+    <link rel="stylesheet" type="text/css" href="assets/css/layout.css" />
+    <link href="https://katalog.slub-dresden.de/typo3conf/ext/slub_katalog_beta/Resources/Public/CSS/bootstrap.min.css" rel="stylesheet" />
+    <!-- <link href="https://katalog.slub-dresden.de/typo3conf/ext/slub_katalog_beta/Resources/Public/CSS/jquery-ui_no_theme.css" rel="stylesheet" />
+    <link href="https://katalog.slub-dresden.de/typo3conf/ext/slub_katalog_beta/Resources/Public/CSS/jquery.webui-popover.min.css" rel="stylesheet" />
+    <link href="https://katalog.slub-dresden.de/typo3conf/ext/slub_katalog_beta/Resources/Public/JavaScript/fancybox/jquery.fancybox.css" rel="stylesheet" /> -->
+    <!-- <link href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css" rel="stylesheet" /> -->
+    <!-- <link href="https://katalog.slub-dresden.de/typo3conf/ext/slub_katalog_beta/Resources/Public/CSS/font.css" rel="stylesheet" /> -->
+    <link href="https://katalog.slub-dresden.de/typo3conf/ext/slub_katalog_beta/Resources/Public/CSS/catalogue.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js" type="text/javascript" async=""></script>
+    <!-- <script type="text/javascript" async="" defer="" src="//piwik.slub-dresden.de/piwik.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <!-- <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script> -->
+    <script src="https://katalog.slub-dresden.de/typo3conf/ext/slub_katalog_beta/Resources/Public/JavaScript/fancybox/jquery.fancybox.js"></script>
+    <script src="https://katalog.slub-dresden.de/typo3conf/ext/slub_katalog_beta/Resources/Public/JavaScript/localization/de_DE.js"></script>
+    <!-- <script src="https://katalog.slub-dresden.de/typo3conf/ext/slub_katalog_beta/Resources/Public/JavaScript/catalogue.js"></script> -->
     <!-- Scripts -->
     <script type="text/javascript" src="assets/js/build.js"></script>
-    <script type="text/javascript" src="assets/js/display.js"></script>
-    <script type="text/javascript">init()</script>
+    <script type="text/javascript">
+      init();
+    </script>
   </head>
   <body>
-    <div class="grid-container">
-      <div class="filter">
-        <b>Institution</b><br/>
-        <input type="checkbox" id="inst_slub">SLUB</input><br/>
-        <input type="checkbox" id="inst_tud">TUD</input>
-        <br/>
-        <b>Typ</b><br/>
-        <input type="checkbox" id="type_video">Video</input><br/>
-        <input type="checkbox" id="type_tutorial">Tutorial</input><br/>
-        <input type="checkbox" id="type_slides">Präsentation</input><br/>
-        <input type="checkbox" id="type_podcast">Podcast</input>
-        <br/>
-        <b>Format</b><br/>
-        <input type="checkbox" id="fmt_pdf">PDF</input><br/>
-        <input type="checkbox" id="fmt_youtube">Youtube</input><br/>
-        <input type="checkbox" id="fmt_opal">OPAL</input>
-        <br/>
-        <b>Lizenz</b><br/>
-        <input type="checkbox" id="lic_cc_0">CC 0</input><br/>
-        <input type="checkbox" id="lic_cc_by">CC BY</input><br/>
-        <input type="checkbox" id="lic_cc_by_sa">CC BY SA</input>
-        <br/>
-        <button onclick="filter()">Filter</button>
+    <div class="csc-default">
+      <header>
+        <!-- <a name="top"></a> -->
+        <nav class="navbar navbar-static-top">
+          <div class="container relative">
+            <div class="navbar-header">
+              <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Navigation anzeigen</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+              <div class="language-switch-mobile"></div>-->
+              <a class="navbar-brand" href="http://www.slub-dresden.de"><div class="hide-text">SLUB – Wir führen Wissen</div></a>
+            </div>
+            <!--
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav navbar-right navbar-main">
+                <li class="active">
+                  <a href="http://www.slub-dresden.de" id="beta-header-icon" title="Startseite (ALT+S)" accesskey="S"><div class="hide-text">Zur Homepage</div></a>
+                </li>
+              </ul>
+          </div> -->
+          </div>
+        </nav>
+      </header>
+      <div class="page-wrapper">
+        <div class="search-wrapper" role="search">
+          <!-- <div id="search-background"></div> -->
+          <div id="search-net-background"></div>
+          <!-- <div id="catalog-search-wrapper">
+             <div class="container"></div>
+          </div> -->
+          <div class="container search-modifier-container"></div>
+          <div class="container search-function-container"></div>
+        </div>
+        <div class="container content index">
+          <div class="row">
+            <div class="col-md-12 navbar-resultlist">
+              <!-- <button class="toggle-facets"></button> -->
+              <div class="resultCount"></div>
+              <div id="resultOptions"></div>
+              <hr>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-9 primary">
+              <div> <!-- class="results" role="main" -->
+                <article>
+                  <header>
+                    <ol id="oer" class="oer-content"> <!-- class="resultList" -->
+                    </ol>
+                  </header>
+                </article>
+              </div>
+            </div>
+            <div class="col-md-3 secondary" role="secondary">
+              <section> <!--  class="facets" -->
+                <article class="facet">
+                  <header>
+                    <h2 class="box"><span aria-hidden="true">&gt; </span>Institution</h2>
+                    <header>
+                      <ol class="facetList box">
+                        <li>
+                          <div class="add-facet">
+                            <input type="checkbox" id="inst_tud" name="inst" value="tud" />
+                            <label for="inst_tud"> TUD</label>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="add-facet">
+                            <input type="checkbox" id="inst_slub" name="inst" value="slub" />
+                            <label for="inst_slub"> SLUB</label>
+                          </div>
+                        </li>
+                      </ol>
+                    </header>
+                  </header>
+                  <header>
+                    <h2 class="box"><span aria-hidden="true">&gt; </span>Medium</h2>
+                    <header>
+                      <ol class="facetList box">
+                        <li>
+                          <div class="add-facet">
+                            <input type="checkbox" id="medium_video" name="medium" value="video" />
+                            <label for="medium_video"> Video</label>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="add-facet">
+                            <input type="checkbox" id="medium_tutorial" name="medium" value="video" />
+                            <label for="medium_tutorial"> Tutorial</label>
+                          </div>
+                        </li>
+                      </ol>
+                      <div class="facetShowAll box clearfix">
+                        <input id="submit-facet" onclick="facet()" class="facet-submit slub-button right" type="submit" value="Anwenden" />
+                      </div>
+                    </header>
+                  </header>
+                </article>
+              </section>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="item1" id="first"></div>
-      <div class="item2" id="second"></div>
-      <div class="item3" id="third"></div>
-      <div class="item4" id="fourth"></div>
-      <div class="item5" id="fifth"></div>
-      <div class="item6" id="sixth"></div>
     </div>
   </body>
 </html>
