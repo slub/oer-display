@@ -10,7 +10,7 @@
 .facet
 {
   padding: 10px 5px;
-  background: #ffffff;
+  background-color: #ffffff;
 }
 .box {
   background-color: #f2fafa;
@@ -24,6 +24,7 @@
 .filter
 {
   grid-area: filter;
+  background-color: #ffffff;
 }
 .item1 {
   grid-area: fst;
@@ -67,6 +68,27 @@
   height: 300px;
   width: 300px;
 }
+.item7 {
+  grid-area: svnth;
+  margin-left: auto;
+  margin-right: auto;
+  height: 300px;
+  width: 300px;
+}
+.item8 {
+  grid-area: egth;
+  margin-left: auto;
+  margin-right: auto;
+  height: 300px;
+  width: 300px;
+}
+.item9 {
+  grid-area: nnth;
+  margin-left: auto;
+  margin-right: auto;
+  height: 300px;
+  width: 300px;
+}
 
 img { width: 300px; height: 300px; }
 
@@ -74,13 +96,13 @@ img { width: 300px; height: 300px; }
   display: grid;
   grid-template-areas:
     'fst scnd thrd filter'
-    'frth ffth sxth filter';
+    'frth ffth sxth filter'
+    'svnth egth nnth filter';
   grid-gap: 10px;
   background-color: rgba(255, 255, 255);
   padding: 10px;
 }
 
 .grid-container > div {
-  background-color: #f2fafa;
-  font-size: 20px;
+  font-size: 16px;
 }

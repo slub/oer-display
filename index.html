@@ -50,22 +50,23 @@ function filter() {
 function show_details_first() {
     un_show_details_second.call()
     document.getElementById("first").innerHTML = "\
-      <img src='img/Zitat_statt_Plagiat_Cover.svg'><br/> \
-      Zitat statt Plagiat<br/> \
+      <img src='img/oer-slub001.jpg'><br/> \
+      Vom Thema zum Volltext<br/> \
       METADATEN<br/> \
       <a href='https://bildungsportal.sachsen.de/opal/auth/RepositoryEntry/18216648709?2'>Link</a>";
-    document.getElementById("first").style.height = "380px";
+    document.getElementById("first").style.height = "400px";
+    document.getElementById("first").style.width = "300px";
 }
 function un_show_details_first() {
     document.getElementById("first").innerHTML = "\
-      <img src='img/Zitat_statt_Plagiat_Cover.svg'><br/> \
-      Zitat statt Plagiat<br/>";
-    document.getElementById("first").style.height = "333px";
+      <img src='img/oer-slub001.jpg'>"
+    document.getElementById("first").style.height = "300px";
+    document.getElementById("first").style.width = "300px";
 }
 function show_details_second() {
     un_show_details_first.call()
     document.getElementById("second").innerHTML = "\
-      <img src='img/ling_hist.png'><br/> \
+      <img src='img/oer-podcast.jpg'><br/> \
       Vorträge zur Linguistik und Sprachgeschichte des Deutschen<br/> \
       METADATEN<br/> \
       <a href='https://open.spotify.com/show/3GwEHw4jqYnKbWi8HZziEn?si=tWP1EyeISEGviQS45AS50w'>Link</a>";
@@ -76,12 +77,9 @@ function show_details_second() {
 }
 function un_show_details_second() {
     document.getElementById("second").innerHTML = "\
-      <img src='img/ling_hist.png'><br/> \
-      Vorträge zur Linguistik und Sprachgeschichte des Deutschen"
-    document.getElementById("second").style.height = "333px";
-    document.getElementById("second").style.whiteSpace = "nowrap";
-    document.getElementById("second").style.textOverflow = "ellipsis";
-    document.getElementById("second").style.overflow = "hidden";
+      <img src='img/oer-podcast.jpg'>"
+    document.getElementById("second").style.height = "300px";
+    document.getElementById("second").style.width = "300px";
 }
 </script>
 </head>
@@ -122,22 +120,31 @@ function un_show_details_second() {
     <button onclick="filter()">Filter</button>
   </div>
   <div onclick="show_details_first()" class="item1" id="first">
-    <img src="img/Zitat_statt_Plagiat_Cover.svg"><br/>
+    <img src="img/oer-slub001.jpg">
   </div>  
   <div onclick="show_details_second()" class="item2" id="second">
-    <img src="img/oer-podcast.jpg"><br/>
+    <img src="img/oer-podcast.jpg">
   </div>
   <div class="item3" id="third">
-    <img src="img/oer-meier001.jpg"><br/>
+    <img src="img/oer-meier001.jpg">
   </div>
   <div class="item4" id="fourth">
-    <img src="img/oer-meier002.jpg"><br/>
+    <img src="img/oer-meier002.jpg">
   </div>  
   <div class="item5" id="fifth">
-    <img src="img/oer-slub001.jpg"><br/>
+    <img src="img/oer-koehler.jpg">
   </div>
   <div class="item6" id="sixth">
-    <img src="img/oer-slub002.jpg"><br/>
+    <img src="img/oer-slub002.jpg">
+  </div>
+  <div class="item7" id="seventh">
+    <img src="img/oer-tutorial.jpg">
+  </div>
+  <div class="item8" id="eigth">
+    <img src="img/oer-patzelt.jpg">
+  </div>
+  <div class="item9" id="nineth">
+    <img src="img/oer-audioguide.jpg">
   </div>
 </div>
 
