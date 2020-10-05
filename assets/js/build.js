@@ -97,21 +97,20 @@ function handleMetadata(item) {
   url.target = "_blank";
   li.appendChild(url);
   insertAfter(item, li);
-  item.firstChild.setAttribute("style", "background: rgba(242, 250, 250, 1);");
+  item.firstChild.setAttribute("style", "background: rgba(242, 250, 250, 1);"); // rgba(0, 175, 200, 1);
   item.firstChild.firstChild.setAttribute("style", "opacity: 0.75;");
 }
 
 // filter content by user selected facets
 function facet() {
-    var tud = document.getElementById("inst_tud").checked
-    var slub = document.getElementById("inst_slub").checked
-    if (!tud & slub) {
-        display(metadata.filter(resource => resource.institution.includes('SLUB')))
-    }
-    if (tud & !slub) {
-        display(metadata.filter(resource => resource.institution.includes('TUD')))
-    }
-    if (!tud & !slub || tud & slub) {
-      display(metadata)
-    }
+  var selection = metadata;
+  var tud = document.getElementById("inst_tud").checked
+  var slub = document.getElementById("inst_slub").checked
+  if (!tud & slub) {
+    selection = selection.filter(resource => resource.institution.includes('SLUB'));
+  }
+  if (tud & !slub) {
+    selection = selection.filter(resource => resource.institution.includes('TUD'));
+  }
+  display(selection);
 }
