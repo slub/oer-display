@@ -68,6 +68,8 @@ function handleMetadata(item) {
   if (document.contains(document.getElementById("metadata"))) {
       if (typeof item.nextSibling != null) {
         if (item.nextSibling.id == "metadata") {
+          item.firstChild.removeAttribute("style");
+          item.firstChild.firstChild.removeAttribute("style");
           item.nextSibling.remove();
           return
         }
@@ -95,6 +97,8 @@ function handleMetadata(item) {
   url.target = "_blank";
   li.appendChild(url);
   insertAfter(item, li);
+  item.firstChild.setAttribute("style", "background: rgba(242, 250, 250, 1);");
+  item.firstChild.firstChild.setAttribute("style", "opacity: 0.75;");
 }
 
 // filter content by user selected facets
