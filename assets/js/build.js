@@ -65,17 +65,19 @@ function addContent(grid,oer) {
 
 // function for adding metadata of item to grid
 function handleMetadata(item) {
-  if (document.contains(document.getElementById("metadata"))) {
-      if (typeof item.nextSibling != null) {
-        if (item.nextSibling.id == "metadata") {
-          item.firstChild.firstChild.removeAttribute("style");
-          item.nextSibling.remove();
-          return
+    if (document.contains(document.getElementById("metadata"))) {
+      if (item.nextSibling !== null) {
+        if (item.nextSibling.hasAttribute("id")) {
+          if (item.nextSibling.id == "metadata") {
+            item.firstChild.firstChild.removeAttribute("style");
+            item.nextSibling.remove();
+            return
         }
       }
-    let prev = document.getElementById("metadata");
-    prev.previousSibling.firstChild.firstChild.removeAttribute("style");
-    prev.remove();
+    }
+    // let prev = document.getElementById("metadata");
+    // prev.previousSibling.firstChild.firstChild.removeAttribute("style");
+    // prev.remove();
   }
   let li = createNode('li');
   li.id = "metadata";
