@@ -28,6 +28,11 @@ function createNode(tag,id=null,className=null,type=null) {
   return elem;
 }
 
+// function to add given newNode after referenceNode
+function insertAfter(referenceNode, newNode) {
+  referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+}
+
 // initialize content and create display
 function init() {
  loadJSON("assets/data/content.json", function(response) {
@@ -41,19 +46,53 @@ function display(content) {
   let grid = document.getElementById('oer');
   grid.innerHTML = ""; // ensure empty grid
   for (i=0; i < content.length; i++) {
-      addContent(grid, content[i])
+      addContent(grid, content[i]);
   }
 }
 
 // function for adding content to given grid
 function addContent(grid,oer) {
   let li = createNode('li');
+  li.id = oer.id;
   let figure = createNode('figure');
   let img = createNode('img');
-  img.src = oer.image
-  figure.appendChild(img)
-  li.appendChild(figure)
-  grid.appendChild(li)
+  img.src = oer.image;
+  figure.appendChild(img);
+  li.appendChild(figure);
+  li.onclick = function() {handleMetadata(this);};
+  grid.appendChild(li);
+}
+
+// function for adding metadata of item to grid
+function handleMetadata(item) {
+  if (document.contains(document.getElementById("metadata"))) {
+      if (typeof item.nextSibling != null) {
+        if (item.nextSibling.id == "metadata") {
+          item.nextSibling.remove();
+          return
+        }
+      }
+    document.getElementById("metadata").remove();
+  }
+  let li = createNode('li');
+  li.id = "metadata";
+  let details = metadata.filter(resource => resource.id.includes(item.id));
+  // hier die Informationen eintragen
+  let author = createNode("p");
+  author.innerHTML = details[0].author;
+  li.appendChild(author);
+  let title = createNode("p");
+  title.innerHTML = details[0].title;
+  li.appendChild(title);
+  // let institution = createNode("p");
+  // institution.innerHTML = details[0].institution;
+  // li.appendChild(institution);
+  let url = createNode("a");
+  url.href = details[0].url;
+  url.target = "_blank";
+  url.innerHTML = "LINK";
+  li.appendChild(url);
+  insertAfter(item, li);
 }
 
 // filter content by user selected facets
@@ -66,7 +105,7 @@ function facet() {
     if (tud & !slub) {
         display(metadata.filter(resource => resource.institution.includes('TUD')))
     }
-    if (!tud & !slub) {
+    if (!tud & !slub || tud & slub) {
       display(metadata)
     }
 }

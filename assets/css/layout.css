@@ -27,3 +27,7 @@ img {
   height: 100%;
   object-fit: cover;
 }
+
+#metadata {
+  background-color: #f2fafa;
+}
