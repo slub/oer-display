@@ -9,6 +9,7 @@ img {
   max-height: 100%;
   margin: auto;
   display: block;
+  cursor: pointer;
 }
 
 .oer-content {
@@ -30,4 +31,33 @@ img {
 
 #metadata {
   background-color: #f2fafa;
+}
+
+#metadata-url {
+  /* .results .seperator .result-button-group .result-button.fulltext */
+  background: url('https://katalog.slub-dresden.de/typo3conf/ext/slub_katalog_beta/Resources/Public/Images/directlink.svg') no-repeat center center;
+  background-size: 80% 80%;
+  background-color: #00afc8;
+  /* .results .seperator .result-button-group .result-button */
+  position: relative;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  margin: 10px 0;
+  display: block;
+}
+
+@media (min-width: 992px) {
+  /* .results .seperator .result-button-group .result-button */
+  #metadata-url {
+    -webkit-transition: all 150ms cubic-bezier(0.16, -0.5, 0.14, 3);
+    -moz-transition: all 150ms cubic-bezier(0.16, -0.5, 0.14, 3);
+    -ms-transition: all 150ms cubic-bezier(0.16, -0.5, 0.14, 3);
+    -o-transition: all 150ms cubic-bezier(0.16, -0.5, 0.14, 3);
+    transition: all 150ms cubic-bezier(0.16, -0.5, 0.14, 3);
+    transform: scale(1);
+  }
+  #metadata-url:hover {
+    transform: scale(1.4);
+  }
 }

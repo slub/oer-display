@@ -80,6 +80,7 @@ function handleMetadata(item) {
   // hier die Informationen eintragen
   let author = createNode("p");
   author.innerHTML = details[0].author;
+  author.setAttribute("style", "font-weight:bold;");
   li.appendChild(author);
   let title = createNode("p");
   title.innerHTML = details[0].title;
@@ -88,9 +89,10 @@ function handleMetadata(item) {
   // institution.innerHTML = details[0].institution;
   // li.appendChild(institution);
   let url = createNode("a");
+  url.id = "metadata-url";
+  url.title = "Link zur Online-Ressource";
   url.href = details[0].url;
   url.target = "_blank";
-  url.innerHTML = "LINK";
   li.appendChild(url);
   insertAfter(item, li);
 }
