@@ -20,6 +20,7 @@ img {
 }
 
 .oer-content > li > figure {
+  background: rgba(242, 250, 250, 1);   /* rgba(0, 175, 200, 1); */
   height: 100%;
 }
 
@@ -27,6 +28,10 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.oer-content > li > figure > img:hover {
+  opacity: 0.75;
 }
 
 #metadata {
