@@ -90,9 +90,13 @@ function handleMetadata(item) {
   let title = createNode("p");
   title.innerHTML = details[0].title;
   li.appendChild(title);
-  // let institution = createNode("p");
-  // institution.innerHTML = details[0].institution;
-  // li.appendChild(institution);
+  let institution = createNode("p");
+  institution.innerHTML = details[0].institution;
+  institution.setAttribute("style", "font-style:italic;");
+  li.appendChild(institution);
+  let date = createNode("p");
+  date.innerHTML = details[0].date;
+  li.appendChild(date);
   let url = createNode("a");
   url.id = "metadata-url";
   url.title = "Link zur Online-Ressource";
