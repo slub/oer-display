@@ -8,6 +8,7 @@
     "subject": "Germanistik",
     "plattform": "Spotify",
     "image": "assets/img/oer-podcast.jpg",
+    "date": "2019",
     "license": null,
     "url": "https://open.spotify.com/show/3GwEHw4jqYnKbWi8HZziEn"
   }, {
@@ -19,6 +20,7 @@
     "subject": "OER-Methodik",
     "plattform": "YouTube",
     "image": "assets/img/oer-meier001.jpg",
+    "date": "2020",
     "license": "CC BY",
     "url": "https://www.youtube.com/playlist?list=PLGlksHy9A8eRPiimSUcYaARVPKeMGxWlY"
   }, {
@@ -30,6 +32,7 @@
     "subject": "Erziehungswissenschaft",
     "plattform": "OPAL",
     "image": "assets/img/oer-koehler.jpg",
+    "date": "2010–2020",
     "license": null,
     "url": "https://bildungsportal.sachsen.de/opal/auth/RepositoryEntry/532971550"
   }, {
@@ -41,6 +44,7 @@
     "subject": "Germanistik",
     "plattform": "Website",
     "image": "assets/img/oer-material.jpg",
+    "date": "2018–2020",
     "license": null,
     "url": "https://www.gls-dresden.de/tag/lasch/"
   }, {
@@ -52,6 +56,7 @@
     "subject": "Germanistik",
     "plattform": "Website",
     "image": "assets/img/oer-audioguide.jpg",
+    "date": "2019",
     "license": null,
     "url": "https://gls-dresden.de/BLOG/Albrechtsburg/index.php"
   }, {
@@ -63,6 +68,7 @@
     "subject": "Wissenschaftliches Arbeiten",
     "plattform": "OPAL",
     "image": "assets/img/oer-slub001.jpg",
+    "date": "2018–2020",
     "license": "CC BY",
     "url": "https://bildungsportal.sachsen.de/opal/auth/RepositoryEntry/18216648709"
   }, {
@@ -74,6 +80,7 @@
     "subject": "Wissenschaftliches Arbeiten",
     "plattform": "OPAL",
     "image": "assets/img/oer-slub002.jpg",
+    "date": "2019",
     "license": "CC BY",
     "url": "https://bildungsportal.sachsen.de/opal/auth/RepositoryEntry/23157637126"
   }, {
@@ -85,6 +92,7 @@
     "subject": "Politikwissenschaft",
     "plattform": "YouTube",
     "image": "assets/img/oer-patzelt.jpg",
+    "date": "2018–2019",
     "license": null,
     "url": "https://www.youtube.com/channel/UClD4GvVA0pEFkLsH3yabDuQ"
   }, {
@@ -96,6 +104,7 @@
     "subject": "Germanistik",
     "plattform": "YouTube",
     "image": "assets/img/oer-meier002.jpg",
+    "date": "2020",
     "license": null,
     "url": "https://www.youtube.com/playlist?list=PLGlksHy9A8eTc8MqvtqoBK8IEqO7Mof8O"
   }, {
@@ -107,6 +116,7 @@
     "subject": "Germanistik",
     "plattform": "YouTube",
     "image": "assets/img/oer-tutorial.jpg",
+    "date": "2020",
     "license": null,
     "url": "https://www.youtube.com/playlist?list=PLzwHQfOPWZDFaUFQZauV02gCcFYQAUGSO"
   }
