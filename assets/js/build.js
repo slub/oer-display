@@ -105,14 +105,104 @@ function handleMetadata(item) {
 
 // filter content by user selected facets
 function facet() {
-  var selection = metadata;
+  var selection = [];
+  // institution
+  var inst_checked = false;
   var tud = document.getElementById("inst_tud").checked
   var slub = document.getElementById("inst_slub").checked
-  if (!tud & slub) {
-    selection = selection.filter(resource => resource.institution.includes('SLUB'));
+  if (slub) {
+    selection.push.apply(selection, metadata.filter(resource => resource.institution.includes('SLUB')));
+    inst_checked = true;
   }
-  if (tud & !slub) {
-    selection = selection.filter(resource => resource.institution.includes('TUD'));
+  if (tud) {
+    selection.push.apply(selection, metadata.filter(resource => resource.institution.includes('TUD')));
+    inst_checked = true;
+  }
+  if (!inst_checked) {
+    selection.push.apply(selection, metadata);
+  }
+  // media type
+  var medium = [];
+  var medium_checked = false;
+  var audio = document.getElementById("medium_audio").checked
+  var blog = document.getElementById("medium_blog").checked
+  var course = document.getElementById("medium_course").checked
+  var video = document.getElementById("medium_video").checked
+  if (audio) {
+    medium.push.apply(medium, selection.filter(resource => resource.media.indexOf("Audio") > -1));
+    medium_checked = true;
+  }
+  if (blog) {
+    medium.push.apply(medium, selection.filter(resource => resource.media.indexOf("Blog") > -1));
+    medium_checked = true;
+  }
+  if (course) {
+    medium.push.apply(medium, selection.filter(resource => resource.media.indexOf("Online-Kurs") > -1));
+    medium_checked = true;
+  }
+  if (video) {
+    medium.push.apply(medium, selection.filter(resource => resource.media.indexOf("Video") > -1));
+    medium_checked = true;
+  }
+  if (medium_checked) {
+    selection = medium;
+  }
+  // subject
+  var subject = [];
+  var subject_checked = false;
+  var education = document.getElementById("subject_education").checked;
+  var german = document.getElementById("subject_german").checked;
+  var politics = document.getElementById("subject_politics").checked;
+  var oer_methods = document.getElementById("subject_oer_methods").checked;
+  var sci_methods = document.getElementById("subject_sci_methods").checked;
+  if (education) {
+    subject.push.apply(subject, selection.filter(resource => resource.subject.includes('Erziehungswissenschaft')));
+    subject_checked = true;
+  }
+  if (german) {
+    subject.push.apply(subject, selection.filter(resource => resource.subject.includes('Germanistik')));
+    subject_checked = true;
+  }
+  if (politics) {
+    subject.push.apply(subject, selection.filter(resource => resource.subject.includes('Politikwissenschaft')));
+    subject_checked = true;
+  }
+  if (oer_methods) {
+    subject.push.apply(subject, selection.filter(resource => resource.subject.includes('OER-Methodik')));
+    subject_checked = true;
+  }
+  if (sci_methods) {
+    subject.push.apply(subject, selection.filter(resource => resource.subject.includes('Wissenschaftliches Arbeiten')));
+    subject_checked = true;
+  }
+  if (subject_checked) {
+    selection = subject;
+  }
+  // plattform
+  var plattform = [];
+  var plattform_checked = false;
+  var opal = document.getElementById("plattform_opal").checked;
+  var youtube = document.getElementById("plattform_youtube").checked;
+  var spotify = document.getElementById("plattform_spotify").checked;
+  var website = document.getElementById("plattform_website").checked;
+  if (youtube) {
+    plattform.push.apply(plattform, selection.filter(resource => resource.plattform.includes('YouTube')));
+    plattform_checked = true;
+  }
+  if (opal) {
+    plattform.push.apply(plattform, selection.filter(resource => resource.plattform.includes('OPAL')));
+    plattform_checked = true;
+  }
+  if (spotify) {
+    plattform.push.apply(plattform, selection.filter(resource => resource.plattform.includes('Spotify')));
+    plattform_checked = true;
+  }
+  if (website) {
+    plattform.push.apply(plattform, selection.filter(resource => resource.plattform.includes('Website')));
+    plattform_checked = true;
+  }
+  if (plattform_checked) {
+    selection = plattform;
   }
   display(selection);
 }
