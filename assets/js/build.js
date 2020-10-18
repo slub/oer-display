@@ -131,8 +131,8 @@ function facet() {
   var audio = document.getElementById("medium_audio").checked
   var blog = document.getElementById("medium_blog").checked
   var course = document.getElementById("medium_course").checked
-  var video = document.getElementById("medium_video").checked
   var text = document.getElementById("medium_text").checked
+  var video = document.getElementById("medium_video").checked
   if (audio) {
     medium.push.apply(medium, selection.filter(resource => resource.media.indexOf("Audio") > -1));
     medium_checked = true;
@@ -145,12 +145,12 @@ function facet() {
     medium.push.apply(medium, selection.filter(resource => resource.media.indexOf("Online-Kurs") > -1));
     medium_checked = true;
   }
-  if (video) {
-    medium.push.apply(medium, selection.filter(resource => resource.media.indexOf("Video") > -1));
-    medium_checked = true;
-  }
   if (text) {
     medium.push.apply(medium, selection.filter(resource => resource.media.indexOf("Text") > -1));
+    medium_checked = true;
+  }
+  if (video) {
+    medium.push.apply(medium, selection.filter(resource => resource.media.indexOf("Video") > -1));
     medium_checked = true;
   }
   if (medium_checked) {
