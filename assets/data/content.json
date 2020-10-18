@@ -61,6 +61,54 @@
     "url": "https://bildungsportal.sachsen.de/opal/auth/RepositoryEntry/532971550"
   }, {
     "id": "OER_006",
+    "title": "OPAL. Eine Einführung",
+    "author": "Sylvia Frin & Ulrike Schirwitz",
+    "institution": "TUD",
+    "media": ["Online-Kurs"],
+    "subject": "OER-Methodik",
+    "plattform": "OPAL",
+    "image": "assets/img/oer-opal.jpg",
+    "date": "2020",
+    "license": "CC-BY",
+    "url": "https://bildungsportal.sachsen.de/opal/auth/RepositoryEntry/516358148/CourseNode/83364748621584?3"
+  }, {
+    "id": "OER_007",
+    "title": "OER. Eine Einführung",
+    "author": "Jana Riedel",
+    "institution": "TUD",
+    "media": ["Präsentation", "Video"],
+    "subject": "OER-Methodik",
+    "plattform": "OPAL",
+    "image": "assets/img/oer-einführung-zill.jpg",
+    "date": "2020",
+    "license": "CC-BY",
+    "url": "https://bildungsportal.sachsen.de/opal/auth/RepositoryEntry/516358148/CourseNode/101894479479848"
+  }, {
+    "id": "OER_008",
+    "title": "Late birds",
+    "author": "Christina Ullrich, Elisabeth Freund, Kiron Franzk",
+    "institution": "TUD",
+    "media": ["Audio"],
+    "subject": "Wissenschaftl. Arbeiten",
+    "plattform": "Website",
+    "image": "assets/img/oer-latebirds.jpg",
+    "date": "2020",
+    "license": null,
+    "url": "https://tu-dresden.de/karriere/weiterbildung/zentrum-fuer-weiterbildung/schreibzentrum/materialien-tipps/pod-vidcasts#section-1"
+  }, {
+    "id": "OER_009",
+    "title": "Materialien & Tipps des Schreibzentrums der TU Dresden",
+    "author": "Nina Melching",
+    "institution": "TUD",
+    "media": ["Text"],
+    "subject": "Wissenschaftl. Arbeiten",
+    "plattform": "Website",
+    "image": "assets/img/oer-tipps.jpg",
+    "date": "2020",
+    "license": null,
+    "url": "https://tu-dresden.de/karriere/weiterbildung/zentrum-fuer-weiterbildung/schreibzentrum/material"
+  }, {
+    "id": "OER_010",
     "title": "Materialien zur Lehre ab dem SoSe 2018",
     "author": "Alexander Lasch",
     "institution": "TUD",
@@ -72,7 +120,7 @@
     "license": null,
     "url": "https://www.gls-dresden.de/tag/lasch/"
   }, {
-    "id": "OER_007",
+    "id": "OER_011",
     "title": "Barrierefreier Audioguide für die Albrechtsburg Meissen",
     "author": "Alexander Lasch",
     "institution": "TUD",
@@ -84,7 +132,7 @@
     "license": null,
     "url": "https://gls-dresden.de/BLOG/Albrechtsburg/index.php"
   }, {
-    "id": "OER_008",
+    "id": "OER_012",
     "title": "Vom Thema zum Volltext",
     "author": "Kathleen Hoffmann",
     "institution": "SLUB",
@@ -96,7 +144,7 @@
     "license": "CC BY",
     "url": "https://bildungsportal.sachsen.de/opal/auth/RepositoryEntry/18216648709"
   }, {
-    "id": "OER_009",
+    "id": "OER_013",
     "title": "Literatur erfassen, verwalten und zitieren",
     "author": "Kathleen Hoffmann, Christina Wenzel, Sandra Rahm, Michaele Adam",
     "institution": "SLUB",
@@ -108,7 +156,7 @@
     "license": "CC BY",
     "url": "https://bildungsportal.sachsen.de/opal/auth/RepositoryEntry/23157637126"
   }, {
-    "id": "OER_010",
+    "id": "OER_014",
     "title": "Grundlagen der politikwissenschaftlichen Systemanalyse",
     "author": "Werner J. Patzelt",
     "institution": "TUD",
@@ -120,7 +168,7 @@
     "license": null,
     "url": "https://www.youtube.com/channel/UClD4GvVA0pEFkLsH3yabDuQ"
   }, {
-    "id": "OER_011",
+    "id": "OER_015",
     "title": "Wissenschaftskommunikation 2.0",
     "author": "Simon Meier-Vieracker",
     "institution": "TUD",
@@ -132,7 +180,7 @@
     "license": null,
     "url": "https://www.youtube.com/playlist?list=PLGlksHy9A8eTc8MqvtqoBK8IEqO7Mof8O"
   }, {
-    "id": "OER_012",
+    "id": "OER_016",
     "title": "Digitale Lehre. Tutorials zur technischen Unterstützung",
     "author": "Alexander Lasch",
     "institution": "TUD",

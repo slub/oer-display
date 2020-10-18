@@ -131,6 +131,7 @@ function facet() {
   var audio = document.getElementById("medium_audio").checked
   var blog = document.getElementById("medium_blog").checked
   var course = document.getElementById("medium_course").checked
+  var presentation = document.getElementById("medium_presentation").checked
   var text = document.getElementById("medium_text").checked
   var video = document.getElementById("medium_video").checked
   if (audio) {
@@ -147,6 +148,10 @@ function facet() {
   }
   if (text) {
     medium.push.apply(medium, selection.filter(resource => resource.media.indexOf("Text") > -1));
+    medium_checked = true;
+  }
+  if (presentation) {
+    medium.push.apply(medium, selection.filter(resource => resource.media.indexOf("Präsentation") > -1));
     medium_checked = true;
   }
   if (video) {
