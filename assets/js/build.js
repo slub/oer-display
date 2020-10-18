@@ -132,6 +132,7 @@ function facet() {
   var blog = document.getElementById("medium_blog").checked
   var course = document.getElementById("medium_course").checked
   var video = document.getElementById("medium_video").checked
+  var text = document.getElementById("medium_text").checked
   if (audio) {
     medium.push.apply(medium, selection.filter(resource => resource.media.indexOf("Audio") > -1));
     medium_checked = true;
@@ -146,6 +147,10 @@ function facet() {
   }
   if (video) {
     medium.push.apply(medium, selection.filter(resource => resource.media.indexOf("Video") > -1));
+    medium_checked = true;
+  }
+  if (text) {
+    medium.push.apply(medium, selection.filter(resource => resource.media.indexOf("Text") > -1));
     medium_checked = true;
   }
   if (medium_checked) {
