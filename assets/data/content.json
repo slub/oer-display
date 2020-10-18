@@ -1,9 +1,9 @@
 [
   {
     "id": "OER_001",
-    "title": "Vorträge zur Linguistik und Sprachgeschichte des Deutschen",
+    "title": "OER. Für eine Weiterentwicklung der Hochschullehre",
     "author": "Autor:innenteam Fakultät SLK, SLUB, ZiLL",
-    "institution": "TUD",
+    "institution": ["TUD","SLUB"],
     "media": ["Text"],
     "subject": "OER-Methodik",
     "plattform": "Website",
@@ -13,6 +13,18 @@
     "url": "assets/img/OER.pdf"
   }, {
     "id": "OER_002",
+    "title": "OER. FAQ zu offenen Lehr- und Lernmaterialien",
+    "author": "Autor:innenteam Fakultät SLK, SLUB, ZiLL",
+    "institution": ["TUD","SLUB"],
+    "media": ["Text"],
+    "subject": "OER-Methodik",
+    "plattform": "Website",
+    "image": "assets/img/oer-oer002.jpg",
+    "date": "2020",
+    "license": null,
+    "url": "assets/img/OER-FAQ.pdf"
+  }, {
+    "id": "OER_003",
     "title": "Vorträge zur Linguistik und Sprachgeschichte des Deutschen",
     "author": "Alexander Lasch",
     "institution": "TUD",
@@ -24,7 +36,7 @@
     "license": null,
     "url": "https://open.spotify.com/show/3GwEHw4jqYnKbWi8HZziEn"
   }, {
-    "id": "OER_003",
+    "id": "OER_004",
     "title": "Tools und Tutorials",
     "author": "Simon Meier-Vieracker",
     "institution": "TUD",
@@ -36,7 +48,7 @@
     "license": "CC BY",
     "url": "https://www.youtube.com/playlist?list=PLGlksHy9A8eRPiimSUcYaARVPKeMGxWlY"
   }, {
-    "id": "OER_004",
+    "id": "OER_005",
     "title": "Gestaltung von Lehr- und Lernprozessen",
     "author": "Thomas Köhler",
     "institution": "TUD",
@@ -48,7 +60,7 @@
     "license": null,
     "url": "https://bildungsportal.sachsen.de/opal/auth/RepositoryEntry/532971550"
   }, {
-    "id": "OER_005",
+    "id": "OER_006",
     "title": "Materialien zur Lehre ab dem SoSe 2018",
     "author": "Alexander Lasch",
     "institution": "TUD",
@@ -60,7 +72,7 @@
     "license": null,
     "url": "https://www.gls-dresden.de/tag/lasch/"
   }, {
-    "id": "OER_006",
+    "id": "OER_007",
     "title": "Barrierefreier Audioguide für die Albrechtsburg Meissen",
     "author": "Alexander Lasch",
     "institution": "TUD",
@@ -72,7 +84,7 @@
     "license": null,
     "url": "https://gls-dresden.de/BLOG/Albrechtsburg/index.php"
   }, {
-    "id": "OER_007",
+    "id": "OER_008",
     "title": "Vom Thema zum Volltext",
     "author": "Kathleen Hoffmann",
     "institution": "SLUB",
@@ -84,7 +96,7 @@
     "license": "CC BY",
     "url": "https://bildungsportal.sachsen.de/opal/auth/RepositoryEntry/18216648709"
   }, {
-    "id": "OER_008",
+    "id": "OER_009",
     "title": "Literatur erfassen, verwalten und zitieren",
     "author": "Kathleen Hoffmann, Christina Wenzel, Sandra Rahm, Michaele Adam",
     "institution": "SLUB",
@@ -96,7 +108,7 @@
     "license": "CC BY",
     "url": "https://bildungsportal.sachsen.de/opal/auth/RepositoryEntry/23157637126"
   }, {
-    "id": "OER_009",
+    "id": "OER_010",
     "title": "Grundlagen der politikwissenschaftlichen Systemanalyse",
     "author": "Werner J. Patzelt",
     "institution": "TUD",
@@ -108,7 +120,7 @@
     "license": null,
     "url": "https://www.youtube.com/channel/UClD4GvVA0pEFkLsH3yabDuQ"
   }, {
-    "id": "OER_010",
+    "id": "OER_011",
     "title": "Wissenschaftskommunikation 2.0",
     "author": "Simon Meier-Vieracker",
     "institution": "TUD",
@@ -120,7 +132,7 @@
     "license": null,
     "url": "https://www.youtube.com/playlist?list=PLGlksHy9A8eTc8MqvtqoBK8IEqO7Mof8O"
   }, {
-    "id": "OER_011",
+    "id": "OER_012",
     "title": "Digitale Lehre. Tutorials zur technischen Unterstützung",
     "author": "Alexander Lasch",
     "institution": "TUD",
