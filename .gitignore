@@ -7,3 +7,5 @@ dev.*
 # file type patterns
 *.swp
 *.kate-swp
+# windows cache files
+Thumbs.db
