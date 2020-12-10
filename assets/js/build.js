@@ -196,6 +196,7 @@ function facet() {
   var plattform = [];
   var plattform_checked = false;
   var opal = document.getElementById("plattform_opal").checked;
+  var padlet = document.getElementById("plattform_padlet").checked;
   var youtube = document.getElementById("plattform_youtube").checked;
   var spotify = document.getElementById("plattform_spotify").checked;
   var website = document.getElementById("plattform_website").checked;
@@ -205,6 +206,10 @@ function facet() {
   }
   if (opal) {
     plattform.push.apply(plattform, selection.filter(resource => resource.plattform.includes('OPAL')));
+    plattform_checked = true;
+  }
+  if (padlet) {
+    plattform.push.apply(plattform, selection.filter(resource => resource.plattform.includes('Padlet')));
     plattform_checked = true;
   }
   if (spotify) {
