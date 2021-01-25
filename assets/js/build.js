@@ -48,7 +48,7 @@ function getUniqueValues (array, key) {
 function init () {
   loadJSON('assets/data/content.json', function (response) {
     metadata = JSON.parse(response);
-    display(metadata);
+    displayGrid(metadata);
     loadJSON('assets/data/facets.json', function (response) {
       facets = JSON.parse(response);
       displayFacets(facets);
@@ -57,7 +57,7 @@ function init () {
 }
 
 // create display by filling grid with metadata
-function display (content) {
+function displayGrid (content) {
   var grid = document.getElementById('oer');
   grid.innerHTML = ''; // ensure empty grid
   for (var i = 0; i < content.length; i++) {
@@ -198,7 +198,7 @@ function faceting () {
       selection = facetSelection;
     }
   }
-  display(selection);
+  displayGrid(selection);
 }
 
 window.init = init;
