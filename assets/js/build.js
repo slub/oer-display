@@ -66,12 +66,12 @@ function displayGrid (resources) {
 }
 
 // function for adding content to given grid
-function addResource (grid, oer) {
+function addResource (grid, resource) {
   var li = createNode('li');
-  li.id = oer.id;
+  li.id = resource.id;
   var figure = createNode('figure');
   var img = createNode('img');
-  img.src = oer.image;
+  img.src = resource.image;
   figure.appendChild(img);
   li.appendChild(figure);
   li.onclick = function () { handleMetadata(this); };
