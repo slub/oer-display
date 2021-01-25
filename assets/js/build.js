@@ -1,4 +1,5 @@
 var metadata = [];
+var facets = {};
 
 /* global XMLHttpRequest */
 // function for requesting and processing JSON data
@@ -34,11 +35,24 @@ function insertAfter (referenceNode, newNode) {
   referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
 }
 
+// get unique values of object field in array specified by key
+function getUniqueValues (array, key) {
+  var values = array.map(function (o) { return o[key]; });
+  values = [].concat.apply([], values); // flatten nested array
+  values = values.filter(function (v, i) { return values.indexOf(v) === i; });
+  values.sort();
+  return values;
+}
+
 // initialize content and create display
 function init () {
   loadJSON('assets/data/content.json', function (response) {
     metadata = JSON.parse(response);
     display(metadata);
+    loadJSON('assets/data/facets.json', function (response) {
+      facets = JSON.parse(response);
+      displayFacets(facets);
+    });
   });
 }
 
@@ -108,121 +122,81 @@ function handleMetadata (item) {
   item.firstChild.firstChild.setAttribute('style', 'opacity: 0.75;');
 }
 
+// create display of facets
+function displayFacets (facets) {
+  for (var key in facets) {
+    var uniqueValues = getUniqueValues(metadata, key);
+    addFacet(key, uniqueValues);
+  }
+}
+
+// add given facet with its values
+function addFacet (facet, values) {
+  var article = document.querySelector('.facet');
+  var header = createNode('header');
+  var h2 = createNode('h2', null, 'box');
+  var span = createNode('span');
+  span.setAttribute('aria-hidden', 'true');
+  span.innerHTML = '&gt; ';
+  h2.appendChild(span);
+  h2.innerHTML += facets[facet];
+  header.appendChild(h2);
+  var header2 = createNode('header');
+  var ol = createNode('ol', null, 'facetList box');
+  for (var f in values) {
+    var li = createNode('li');
+    var div = createNode('div', null, 'add-facet');
+    var input = createNode('input', values[f].toLowerCase());
+    input.setAttribute('type', 'checkbox');
+    input.setAttribute('name', facet);
+    input.setAttribute('value', values[f].toLowerCase());
+    div.appendChild(input);
+    var label = createNode('label');
+    label.setAttribute('for', values[f].toLowerCase());
+    label.innerHTML = values[f];
+    div.appendChild(label);
+    li.appendChild(div);
+    ol.appendChild(li);
+  }
+  header2.appendChild(ol);
+  if (Object.keys(facets).indexOf(facet) === Object.keys(facets).length - 1) {
+    div = createNode('div', null, 'facetShowAll box clearfix');
+    input = createNode('input', 'submit-facet', 'facet-submit slub-button right');
+    input.setAttribute('onclick', 'facet()');
+    input.setAttribute('type', 'submit');
+    input.setAttribute('value', 'Anwenden');
+    div.appendChild(input);
+    header2.appendChild(div);
+  }
+  header.appendChild(header2);
+  article.appendChild(header);
+}
+
 // filter content by user selected facets
 function facet () {
   var selection = [];
-  // institution
-  var instChecked = false;
-  var tud = document.getElementById('inst_tud').checked;
-  var slub = document.getElementById('inst_slub').checked;
-  if (slub) {
-    selection.push.apply(selection, metadata.filter(resource => resource.institution.includes('SLUB')));
-    instChecked = true;
-  }
-  if (tud) {
-    selection.push.apply(selection, metadata.filter(resource => resource.institution.includes('TUD')));
-    instChecked = true;
-  }
-  if (!instChecked) {
-    selection.push.apply(selection, metadata);
-  }
-  // media type
-  var medium = [];
-  var mediumChecked = false;
-  var audio = document.getElementById('medium_audio').checked;
-  var blog = document.getElementById('medium_blog').checked;
-  var course = document.getElementById('medium_course').checked;
-  var presentation = document.getElementById('medium_presentation').checked;
-  var text = document.getElementById('medium_text').checked;
-  var video = document.getElementById('medium_video').checked;
-  if (audio) {
-    medium.push.apply(medium, selection.filter(resource => resource.media.indexOf('Audio') > -1));
-    mediumChecked = true;
-  }
-  if (blog) {
-    medium.push.apply(medium, selection.filter(resource => resource.media.indexOf('Blog') > -1));
-    mediumChecked = true;
-  }
-  if (course) {
-    medium.push.apply(medium, selection.filter(resource => resource.media.indexOf('Online-Kurs') > -1));
-    mediumChecked = true;
-  }
-  if (text) {
-    medium.push.apply(medium, selection.filter(resource => resource.media.indexOf('Text') > -1));
-    mediumChecked = true;
-  }
-  if (presentation) {
-    medium.push.apply(medium, selection.filter(resource => resource.media.indexOf('Präsentation') > -1));
-    mediumChecked = true;
-  }
-  if (video) {
-    medium.push.apply(medium, selection.filter(resource => resource.media.indexOf('Video') > -1));
-    mediumChecked = true;
-  }
-  if (mediumChecked) {
-    selection = medium;
-  }
-  // subject
-  var subject = [];
-  var subjectChecked = false;
-  var education = document.getElementById('subject_education').checked;
-  var german = document.getElementById('subject_german').checked;
-  var politics = document.getElementById('subject_politics').checked;
-  var oerMethods = document.getElementById('subject_oer_methods').checked;
-  var sciMethods = document.getElementById('subject_sci_methods').checked;
-  if (education) {
-    subject.push.apply(subject, selection.filter(resource => resource.subject.includes('Erziehungswissenschaft')));
-    subjectChecked = true;
-  }
-  if (german) {
-    subject.push.apply(subject, selection.filter(resource => resource.subject.includes('Germanistik')));
-    subjectChecked = true;
-  }
-  if (politics) {
-    subject.push.apply(subject, selection.filter(resource => resource.subject.includes('Politikwissenschaft')));
-    subjectChecked = true;
-  }
-  if (oerMethods) {
-    subject.push.apply(subject, selection.filter(resource => resource.subject.includes('OER-Methodik')));
-    subjectChecked = true;
-  }
-  if (sciMethods) {
-    subject.push.apply(subject, selection.filter(resource => resource.subject.includes('Wissenschaftliches Arbeiten')));
-    subjectChecked = true;
-  }
-  if (subjectChecked) {
-    selection = subject;
-  }
-  // plattform
-  var plattform = [];
-  var plattformChecked = false;
-  var opal = document.getElementById('plattform_opal').checked;
-  var padlet = document.getElementById('plattform_padlet').checked;
-  var youtube = document.getElementById('plattform_youtube').checked;
-  var spotify = document.getElementById('plattform_spotify').checked;
-  var website = document.getElementById('plattform_website').checked;
-  if (youtube) {
-    plattform.push.apply(plattform, selection.filter(resource => resource.plattform.includes('YouTube')));
-    plattformChecked = true;
-  }
-  if (opal) {
-    plattform.push.apply(plattform, selection.filter(resource => resource.plattform.includes('OPAL')));
-    plattformChecked = true;
-  }
-  if (padlet) {
-    plattform.push.apply(plattform, selection.filter(resource => resource.plattform.includes('Padlet')));
-    plattformChecked = true;
-  }
-  if (spotify) {
-    plattform.push.apply(plattform, selection.filter(resource => resource.plattform.includes('Spotify')));
-    plattformChecked = true;
-  }
-  if (website) {
-    plattform.push.apply(plattform, selection.filter(resource => resource.plattform.includes('Website')));
-    plattformChecked = true;
-  }
-  if (plattformChecked) {
-    selection = plattform;
+  for (var key in facets) {
+    var checked = false;
+    var facetSelection = [];
+    var first = Object.keys(facets).indexOf(key) === 0;
+    var uniqueValues = getUniqueValues(metadata, key);
+    for (var i in uniqueValues) {
+      var facetChecked = document.getElementById(uniqueValues[i].toLowerCase()).checked;
+      if (facetChecked) {
+        checked = true;
+        if (first) {
+          selection.push.apply(selection, metadata.filter(resource => resource[key].includes(uniqueValues[i])));
+        } else {
+          facetSelection.push.apply(facetSelection, selection.filter(resource => resource[key].includes(uniqueValues[i])));
+        }
+      }
+    }
+    if (!checked & first) {
+      selection.push.apply(selection, metadata);
+    }
+    if (checked & !first) {
+      selection = facetSelection;
+    }
   }
   display(selection);
 }
