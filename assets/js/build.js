@@ -2,7 +2,7 @@ var metadata = [];
 var facets = {};
 
 /* global XMLHttpRequest */
-// function for requesting and processing JSON data
+// request JSON file at path and pass response to given func
 function loadJSON (path, func) {
   var xobj = new XMLHttpRequest();
   xobj.overrideMimeType('application/json');
@@ -15,7 +15,7 @@ function loadJSON (path, func) {
   xobj.send(null);
 }
 
-// function for creating element nodes
+// create element node with given attributes
 function createNode (tag, id = null, className = null, type = null) {
   var elem = document.createElement(tag);
   if (id !== null) {
@@ -30,7 +30,7 @@ function createNode (tag, id = null, className = null, type = null) {
   return elem;
 }
 
-// function to add given newNode after referenceNode
+// add given newNode after given referenceNode
 function insertAfter (referenceNode, newNode) {
   referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
 }
@@ -56,7 +56,7 @@ function init () {
   });
 }
 
-// create display by filling grid with metadata
+// create grid display with given resources
 function displayGrid (resources) {
   var grid = document.getElementById('oer');
   grid.innerHTML = ''; // ensure empty grid
@@ -65,7 +65,7 @@ function displayGrid (resources) {
   }
 }
 
-// function for adding content to given grid
+// add given resource to given grid
 function addResource (grid, resource) {
   var li = createNode('li');
   li.id = resource.id;
@@ -78,7 +78,7 @@ function addResource (grid, resource) {
   grid.appendChild(li);
 }
 
-// function for adding metadata of item to grid
+// add metadata of item to grid or remove it
 function handleMetadata (item) {
   if (document.contains(document.getElementById('metadata'))) {
     if (item.nextSibling !== null) {
@@ -122,7 +122,7 @@ function handleMetadata (item) {
   item.firstChild.firstChild.setAttribute('style', 'opacity: 0.75;');
 }
 
-// create display of facets
+// create display of given facets
 function displayFacets (facets) {
   for (var key in facets) {
     var uniqueValues = getUniqueValues(metadata, key);
@@ -172,7 +172,7 @@ function addFacet (facet, values) {
   article.appendChild(header);
 }
 
-// filter content by user selected facets
+// filter resources by user selected facets
 function faceting () {
   var selection = [];
   for (var key in facets) {
