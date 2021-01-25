@@ -61,12 +61,12 @@ function displayGrid (content) {
   var grid = document.getElementById('oer');
   grid.innerHTML = ''; // ensure empty grid
   for (var i = 0; i < content.length; i++) {
-    addContent(grid, content[i]);
+    addResource(grid, content[i]);
   }
 }
 
 // function for adding content to given grid
-function addContent (grid, oer) {
+function addResource (grid, oer) {
   var li = createNode('li');
   li.id = oer.id;
   var figure = createNode('figure');
