@@ -203,5 +203,17 @@
     "date": "2020",
     "license": null,
     "url": "https://padlet.com/simonmeiervieracker/readingmachines"
+  }, {
+    "id": "OER_018",
+    "title": "lasch not least – der zeitwörtliche Podcast",
+    "author": "Studierende der germanistischen Linguistik und Sprachgeschichte an der TU Dresden",
+    "institution": "TUD",
+    "media": ["Audio"],
+    "subject": "Germanistik",
+    "plattform": "Spotify",
+    "image": "assets/img/oer-lasch-not-least.jpeg",
+    "date": "2021",
+    "license": null,
+    "url": "https://open.spotify.com/show/74WNJ3nI9GpmYirRqIzkOe"
   }
 ]
