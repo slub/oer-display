@@ -57,11 +57,11 @@ function init () {
 }
 
 // create display by filling grid with metadata
-function displayGrid (content) {
+function displayGrid (resources) {
   var grid = document.getElementById('oer');
   grid.innerHTML = ''; // ensure empty grid
-  for (var i = 0; i < content.length; i++) {
-    addResource(grid, content[i]);
+  for (var i = 0; i < resources.length; i++) {
+    addResource(grid, resources[i]);
   }
 }
 
