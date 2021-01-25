@@ -162,7 +162,7 @@ function addFacet (facet, values) {
   if (Object.keys(facets).indexOf(facet) === Object.keys(facets).length - 1) {
     div = createNode('div', null, 'facetShowAll box clearfix');
     input = createNode('input', 'submit-facet', 'facet-submit slub-button right');
-    input.setAttribute('onclick', 'facet()');
+    input.setAttribute('onclick', 'faceting()');
     input.setAttribute('type', 'submit');
     input.setAttribute('value', 'Anwenden');
     div.appendChild(input);
@@ -173,7 +173,7 @@ function addFacet (facet, values) {
 }
 
 // filter content by user selected facets
-function facet () {
+function faceting () {
   var selection = [];
   for (var key in facets) {
     var checked = false;
@@ -202,4 +202,4 @@ function facet () {
 }
 
 window.init = init;
-window.facet = facet;
+window.faceting = faceting;
