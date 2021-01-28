@@ -196,6 +196,7 @@ function faceting () {
       selection = facetSelection;
     }
   }
+  selection = selection.filter((v, i, a) => a.findIndex(t => (t.id === v.id)) === i);
   displayGrid(selection);
 }
 
