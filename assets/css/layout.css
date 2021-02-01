@@ -1,7 +1,31 @@
-* { font-family:'Open Sans',sans }
+::selection {
+    background: rgba(153,204,221,0.6)
+}
 
-.facet h2 {
-  font-weight: bold;
+.displayText {
+  line-height: 160%;
+  
+}
+
+.displayText > h1 {
+  color: #c00;
+  font-size: 2.5em !important;
+  font-weight: normal !important;
+  margin-top: 36px;
+  margin-bottom: 24px;
+}
+
+.displayText > p > a {
+  color: #078078 !important;
+  text-decoration: underline !important;
+}
+
+.displayText > p {
+  color: #333;
+  font-size: 16px;
+  font-family: 'VisSlabReg',Arial,Helvetica,sans-serif;
+  position: relative;
+  margin: 0.7em 0;
 }
 
 img {

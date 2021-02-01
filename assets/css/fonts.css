@@ -1,0 +1,47 @@
+@font-face {
+  font-family: 'VisSansLight';
+  src: url('https://raw.githubusercontent.com/slub/switchconfig/master/fonts/VistaSansSOT-Light.eot');
+  src: url('https://raw.githubusercontent.com/slub/switchconfig/master/fonts/VistaSansSOT-Light.eot?#iefix') format('embedded-opentype'), /* url('https://raw.githubusercontent.com/slub/switchconfig/master/fonts/VistaSansSOT-Light.woff') format('woff'), */ url('https://raw.githubusercontent.com/slub/switchconfig/master/fonts/VistaSansSOT-Light.woff2') format('woff2');
+  font-style:   normal;
+  font-weight:  400;
+}
+
+@font-face {
+  font-family: 'VisSansBook';
+  src: url('https://raw.githubusercontent.com/slub/switchconfig/master/fonts/VistaSansSOT-Book.eot');
+  src: url('https://raw.githubusercontent.com/slub/switchconfig/master/fonts/VistaSansSOT-Book.eot?#iefix') format('embedded-opentype'), url('https://raw.githubusercontent.com/slub/switchconfig/master/fonts/VistaSansSOT-Book.woff') format('woff'), url('https://raw.githubusercontent.com/slub/switchconfig/master/fonts/VistaSansSOT-Book.woff2') format('woff2');
+  font-style:   normal;
+  font-weight:  400;
+}
+
+@font-face {
+  font-family: 'VisSansBold';
+  src: url('https://raw.githubusercontent.com/slub/switchconfig/master/fonts/VistaSansSOT-Bold.eot');
+  src: url('https://raw.githubusercontent.com/slub/switchconfig/master/fonts/VistaSansSOT-Bold.eot?#iefix') format('embedded-opentype'), url('https://raw.githubusercontent.com/slub/switchconfig/master/fonts/VistaSansSOT-Bold.woff') format('woff'), url('https://raw.githubusercontent.com/slub/switchconfig/master/fonts/VistaSansSOT-Bold.woff2') format('woff2');
+  font-style:   normal;
+  font-weight:  400;
+}
+
+@font-face {
+  font-family: 'VisSlabReg';
+  src: url('https://raw.githubusercontent.com/slub/switchconfig/master/fonts/VistaSlabSOT-Regular.eot');
+  src: url('https://raw.githubusercontent.com/slub/switchconfig/master/fonts/VistaSlabSOT-Regular.eot?#iefix') format('embedded-opentype'), /* url('https://raw.githubusercontent.com/slub/switchconfig/master/fonts/VistaSlabSOT-Regular.woff') format('woff'), */ url('https://raw.githubusercontent.com/slub/switchconfig/master/fonts/VistaSlabSOT-Regular.woff2') format('woff2');
+  font-style:   normal;
+  font-weight:  400;
+}
+
+@font-face {
+  font-family: 'VisSlabMed';
+  src: url('https://raw.githubusercontent.com/slub/switchconfig/master/fonts/VistaSlabSOT-Medium.eot');
+  src: url('https://raw.githubusercontent.com/slub/switchconfig/master/fonts/VistaSlabSOT-Medium.eot?#iefix') format('embedded-opentype'), /* url('https://raw.githubusercontent.com/slub/switchconfig/master/fonts/VistaSlabSOT-Medium.woff') format('woff'), */ url('https://raw.githubusercontent.com/slub/switchconfig/master/fonts/VistaSlabSOT-Medium.woff2') format('woff2');
+  font-style:   normal;
+  font-weight:  400;
+}
+
+@font-face {
+  font-family: 'VisSlabBold';
+  src: url('https://raw.githubusercontent.com/slub/switchconfig/master/fonts/VistaSlabSOT-Bold.eot');
+  src: url('https://raw.githubusercontent.com/slub/switchconfig/master/fonts/VistaSlabSOT-Bold.eot?#iefix') format('embedded-opentype'), /* url('https://raw.githubusercontent.com/slub/switchconfig/master/fonts/VistaSlabSOT-Bold.woff') format('woff'), */  url('https://raw.githubusercontent.com/slub/switchconfig/master/fonts/VistaSlabSOT-Bold.woff2') format('woff2');
+  font-style:   normal;
+  font-weight:  400;
+}
