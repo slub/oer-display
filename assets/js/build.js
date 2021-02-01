@@ -100,14 +100,15 @@ function handleMetadata (item) {
   // hier die Informationen eintragen
   var author = createNode('p');
   author.innerHTML = details[0].author;
-  author.setAttribute('style', 'font-weight:bold;');
+  author.setAttribute('style', 'font-family: \'VisSansBold\', Helvetica, Arial, Sans-Serif;');
   li.appendChild(author);
   var title = createNode('p');
   title.innerHTML = details[0].title;
   li.appendChild(title);
   var institution = createNode('p');
-  institution.innerHTML = details[0].institution;
-  institution.setAttribute('style', 'font-style:italic;');
+  var emphasis = createNode('em');
+  emphasis.innerHTML = details[0].institution;
+  institution.appendChild(emphasis);
   li.appendChild(institution);
   var date = createNode('p');
   date.innerHTML = details[0].date;
