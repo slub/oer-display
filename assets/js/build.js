@@ -127,10 +127,10 @@ function handleMetadata (item) {
 
 // create display of given facets
 function displayFacets (facets) {
-  for (var key in facets) {
+  Object.keys(facets).forEach(function (key) {
     var uniqueValues = getUniqueValues(metadata, key);
     addFacet(key, uniqueValues);
-  }
+  });
 }
 
 // add given facet with its values
@@ -146,7 +146,7 @@ function addFacet (facet, values) {
   header.appendChild(h2);
   var header2 = createNode('header');
   var ol = createNode('ol', null, 'facetList box');
-  for (var f in values) {
+  Object.keys(values).forEach(function (f) {
     const li = createNode('li');
     const div = createNode('div', null, 'add-facet');
     const input = createNode('input', values[f].toLowerCase(), null, 'checkbox');
@@ -159,7 +159,7 @@ function addFacet (facet, values) {
     div.appendChild(label);
     li.appendChild(div);
     ol.appendChild(li);
-  }
+  });
   header2.appendChild(ol);
   if (Object.keys(facets).indexOf(facet) === Object.keys(facets).length - 1) {
     const div = createNode('div', null, 'facetShowAll box clearfix');
