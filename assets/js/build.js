@@ -126,16 +126,16 @@ function addFacet (facet, values) {
   header.appendChild(h2);
   var header2 = createNode('header');
   var ol = createNode('ol', null, 'facetList box');
-  Object.keys(values).forEach((f) => {
+  values.forEach((value) => {
     const li = createNode('li');
     const div = createNode('div', null, 'add-facet');
-    const input = createNode('input', values[f].toLowerCase(), null, 'checkbox');
+    const input = createNode('input', value.toLowerCase(), null, 'checkbox');
     input.setAttribute('name', facet);
-    input.setAttribute('value', values[f].toLowerCase());
+    input.setAttribute('value', value.toLowerCase());
     div.appendChild(input);
     const label = createNode('label');
-    label.setAttribute('for', values[f].toLowerCase());
-    label.innerHTML = values[f];
+    label.setAttribute('for', value.toLowerCase());
+    label.innerHTML = value;
     div.appendChild(label);
     li.appendChild(div);
     ol.appendChild(li);
@@ -181,14 +181,14 @@ function faceting () {
     var facetSelection = [];
     var first = Object.keys(facets).indexOf(key) === 0;
     var uniqueValues = getUniqueValues(metadata, key);
-    Object.keys(uniqueValues).forEach((i) => {
-      var facetChecked = document.getElementById(uniqueValues[i].toLowerCase()).checked;
+    uniqueValues.forEach((value) => {
+      var facetChecked = document.getElementById(value.toLowerCase()).checked;
       if (facetChecked) {
         checked = true;
         if (first) {
-          selection.push.apply(selection, metadata.filter((resource) => resource[key].includes(uniqueValues[i])));
+          selection.push.apply(selection, metadata.filter((resource) => resource[key].includes(value)));
         } else {
-          facetSelection.push.apply(facetSelection, selection.filter((resource) => resource[key].includes(uniqueValues[i])));
+          facetSelection.push.apply(facetSelection, selection.filter((resource) => resource[key].includes(value)));
         }
       }
     });
