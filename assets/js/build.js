@@ -46,40 +46,6 @@ function getUniqueValues (array, key) {
   return values;
 }
 
-// initialize content and create display
-function init () {
-  loadJSON('assets/data/content.json', function (response) {
-    metadata = JSON.parse(response);
-    displayGrid(metadata);
-    loadJSON('assets/data/facets.json', function (response) {
-      facets = JSON.parse(response);
-      displayFacets(facets);
-    });
-  });
-}
-
-// create grid display with given resources
-function displayGrid (resources) {
-  var grid = document.getElementById('oer');
-  grid.innerHTML = ''; // ensure empty grid
-  resources.forEach(function (resource) {
-    addResource(grid, resource);
-  });
-}
-
-// add given resource to given grid
-function addResource (grid, resource) {
-  var li = createNode('li');
-  li.id = resource.id;
-  var figure = createNode('figure');
-  var img = createNode('img');
-  img.src = resource.image;
-  figure.appendChild(img);
-  li.appendChild(figure);
-  li.onclick = function () { handleMetadata(this); };
-  grid.appendChild(li);
-}
-
 // add metadata of item to grid or remove it
 function handleMetadata (item) {
   if (document.contains(document.getElementById('metadata'))) {
@@ -125,11 +91,25 @@ function handleMetadata (item) {
   item.firstChild.firstChild.setAttribute('style', 'opacity: 0.75;');
 }
 
-// create display of given facets
-function displayFacets (facets) {
-  Object.keys(facets).forEach(function (key) {
-    var uniqueValues = getUniqueValues(metadata, key);
-    addFacet(key, uniqueValues);
+// add given resource to given grid
+function addResource (grid, resource) {
+  var li = createNode('li');
+  li.id = resource.id;
+  var figure = createNode('figure');
+  var img = createNode('img');
+  img.src = resource.image;
+  figure.appendChild(img);
+  li.appendChild(figure);
+  li.onclick = function () { handleMetadata(this); };
+  grid.appendChild(li);
+}
+
+// create grid display with given resources
+function displayGrid (resources) {
+  var grid = document.getElementById('oer');
+  grid.innerHTML = ''; // ensure empty grid
+  resources.forEach(function (resource) {
+    addResource(grid, resource);
   });
 }
 
@@ -171,6 +151,26 @@ function addFacet (facet, values) {
   }
   header.appendChild(header2);
   article.appendChild(header);
+}
+
+// create display of given facets
+function displayFacets (facets) {
+  Object.keys(facets).forEach(function (key) {
+    var uniqueValues = getUniqueValues(metadata, key);
+    addFacet(key, uniqueValues);
+  });
+}
+
+// initialize content and create display
+function init () {
+  loadJSON('assets/data/content.json', function (response) {
+    metadata = JSON.parse(response);
+    displayGrid(metadata);
+    loadJSON('assets/data/facets.json', function (response) {
+      facets = JSON.parse(response);
+      displayFacets(facets);
+    });
+  });
 }
 
 // filter resources by user selected facets
