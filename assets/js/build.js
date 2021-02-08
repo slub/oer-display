@@ -62,9 +62,9 @@ function init () {
 function displayGrid (resources) {
   var grid = document.getElementById('oer');
   grid.innerHTML = ''; // ensure empty grid
-  for (var i = 0; i < resources.length; i++) {
-    addResource(grid, resources[i]);
-  }
+  resources.forEach(function (resource) {
+    addResource(grid, resource);
+  });
 }
 
 // add given resource to given grid
