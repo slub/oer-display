@@ -39,9 +39,9 @@ function insertAfter (referenceNode, newNode) {
 
 // get unique values of object field in array specified by key
 function getUniqueValues (array, key) {
-  var values = array.map(function (o) { return o[key]; });
+  var values = array.map((o) => o[key]);
   values = [].concat.apply([], values); // flatten nested array
-  values = values.filter(function (v, i) { return values.indexOf(v) === i; });
+  values = values.filter((v, i) => values.indexOf(v) === i);
   values.sort();
   return values;
 }
@@ -126,7 +126,7 @@ function addFacet (facet, values) {
   header.appendChild(h2);
   var header2 = createNode('header');
   var ol = createNode('ol', null, 'facetList box');
-  Object.keys(values).forEach(function (f) {
+  Object.keys(values).forEach((f) => {
     const li = createNode('li');
     const div = createNode('div', null, 'add-facet');
     const input = createNode('input', values[f].toLowerCase(), null, 'checkbox');
@@ -155,7 +155,7 @@ function addFacet (facet, values) {
 
 // create display of given facets
 function displayFacets (facets) {
-  Object.keys(facets).forEach(function (key) {
+  Object.keys(facets).forEach((key) => {
     var uniqueValues = getUniqueValues(metadata, key);
     addFacet(key, uniqueValues);
   });
@@ -163,10 +163,10 @@ function displayFacets (facets) {
 
 // initialize content and create display
 function init () {
-  loadJSON('assets/data/content.json', function (response) {
+  loadJSON('assets/data/content.json', (response) => {
     metadata = JSON.parse(response);
     displayGrid(metadata);
-    loadJSON('assets/data/facets.json', function (response) {
+    loadJSON('assets/data/facets.json', (response) => {
       facets = JSON.parse(response);
       displayFacets(facets);
     });
@@ -176,12 +176,12 @@ function init () {
 // filter resources by user selected facets
 function faceting () {
   var selection = [];
-  Object.keys(facets).forEach(function (key) {
+  Object.keys(facets).forEach((key) => {
     var checked = false;
     var facetSelection = [];
     var first = Object.keys(facets).indexOf(key) === 0;
     var uniqueValues = getUniqueValues(metadata, key);
-    Object.keys(uniqueValues).forEach(function (i) {
+    Object.keys(uniqueValues).forEach((i) => {
       var facetChecked = document.getElementById(uniqueValues[i].toLowerCase()).checked;
       if (facetChecked) {
         checked = true;
