@@ -147,13 +147,13 @@ function addFacet (facet, values) {
   var header2 = createNode('header');
   var ol = createNode('ol', null, 'facetList box');
   for (var f in values) {
-    let li = createNode('li');
-    let div = createNode('div', null, 'add-facet');
-    let input = createNode('input', values[f].toLowerCase(), null, 'checkbox');
+    const li = createNode('li');
+    const div = createNode('div', null, 'add-facet');
+    const input = createNode('input', values[f].toLowerCase(), null, 'checkbox');
     input.setAttribute('name', facet);
     input.setAttribute('value', values[f].toLowerCase());
     div.appendChild(input);
-    let label = createNode('label');
+    const label = createNode('label');
     label.setAttribute('for', values[f].toLowerCase());
     label.innerHTML = values[f];
     div.appendChild(label);
@@ -162,8 +162,8 @@ function addFacet (facet, values) {
   }
   header2.appendChild(ol);
   if (Object.keys(facets).indexOf(facet) === Object.keys(facets).length - 1) {
-    let div = createNode('div', null, 'facetShowAll box clearfix');
-    let input = createNode('input', 'submit-facet', 'facet-submit slub-button right', 'submit');
+    const div = createNode('div', null, 'facetShowAll box clearfix');
+    const input = createNode('input', 'submit-facet', 'facet-submit slub-button right', 'submit');
     input.setAttribute('onclick', 'faceting()');
     input.setAttribute('value', 'Anwenden');
     div.appendChild(input);
