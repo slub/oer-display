@@ -98,7 +98,7 @@ function handleMetadata (item) {
   }
   var li = createNode('li');
   li.id = 'metadata';
-  var details = metadata.filter(resource => resource.id.includes(item.id));
+  var details = metadata.filter((resource) => resource.id.includes(item.id));
   // hier die Informationen eintragen
   var author = createNode('p');
   author.innerHTML = details[0].author;
@@ -186,9 +186,9 @@ function faceting () {
       if (facetChecked) {
         checked = true;
         if (first) {
-          selection.push.apply(selection, metadata.filter(resource => resource[key].includes(uniqueValues[i])));
+          selection.push.apply(selection, metadata.filter((resource) => resource[key].includes(uniqueValues[i])));
         } else {
-          facetSelection.push.apply(facetSelection, selection.filter(resource => resource[key].includes(uniqueValues[i])));
+          facetSelection.push.apply(facetSelection, selection.filter((resource) => resource[key].includes(uniqueValues[i])));
         }
       }
     });
@@ -199,7 +199,7 @@ function faceting () {
       selection = facetSelection;
     }
   });
-  selection = selection.filter((v, i, a) => a.findIndex(t => (t.id === v.id)) === i);
+  selection = selection.filter((v, i, a) => a.findIndex((t) => (t.id === v.id)) === i);
   displayGrid(selection);
 }
 
