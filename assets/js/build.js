@@ -9,7 +9,7 @@ function loadJSON (path, func) {
   var xobj = new XMLHttpRequest();
   xobj.overrideMimeType('application/json');
   xobj.open('GET', path, true);
-  xobj.onreadystatechange = function () {
+  xobj.onreadystatechange = () => {
     if (xobj.readyState === 4 && xobj.status === 200) {
       func(xobj.responseText);
     }
