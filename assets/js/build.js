@@ -176,12 +176,12 @@ function addFacet (facet, values) {
 // filter resources by user selected facets
 function faceting () {
   var selection = [];
-  for (var key in facets) {
+  Object.keys(facets).forEach(function (key) {
     var checked = false;
     var facetSelection = [];
     var first = Object.keys(facets).indexOf(key) === 0;
     var uniqueValues = getUniqueValues(metadata, key);
-    for (var i in uniqueValues) {
+    Object.keys(uniqueValues).forEach(function (i) {
       var facetChecked = document.getElementById(uniqueValues[i].toLowerCase()).checked;
       if (facetChecked) {
         checked = true;
@@ -191,14 +191,14 @@ function faceting () {
           facetSelection.push.apply(facetSelection, selection.filter(resource => resource[key].includes(uniqueValues[i])));
         }
       }
-    }
+    });
     if (!checked & first) {
       selection.push.apply(selection, metadata);
     }
     if (checked & !first) {
       selection = facetSelection;
     }
-  }
+  });
   selection = selection.filter((v, i, a) => a.findIndex(t => (t.id === v.id)) === i);
   displayGrid(selection);
 }
