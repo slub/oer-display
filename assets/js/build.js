@@ -1,3 +1,5 @@
+/* jshint esversion: 6 */
+
 var metadata = [];
 var facets = {};
 
@@ -44,40 +46,6 @@ function getUniqueValues (array, key) {
   return values;
 }
 
-// initialize content and create display
-function init () {
-  loadJSON('assets/data/content.json', function (response) {
-    metadata = JSON.parse(response);
-    displayGrid(metadata);
-    loadJSON('assets/data/facets.json', function (response) {
-      facets = JSON.parse(response);
-      displayFacets(facets);
-    });
-  });
-}
-
-// create grid display with given resources
-function displayGrid (resources) {
-  var grid = document.getElementById('oer');
-  grid.innerHTML = ''; // ensure empty grid
-  for (var i = 0; i < resources.length; i++) {
-    addResource(grid, resources[i]);
-  }
-}
-
-// add given resource to given grid
-function addResource (grid, resource) {
-  var li = createNode('li');
-  li.id = resource.id;
-  var figure = createNode('figure');
-  var img = createNode('img');
-  img.src = resource.image;
-  figure.appendChild(img);
-  li.appendChild(figure);
-  li.onclick = function () { handleMetadata(this); };
-  grid.appendChild(li);
-}
-
 // add metadata of item to grid or remove it
 function handleMetadata (item) {
   if (document.contains(document.getElementById('metadata'))) {
@@ -96,7 +64,7 @@ function handleMetadata (item) {
   }
   var li = createNode('li');
   li.id = 'metadata';
-  var details = metadata.filter(resource => resource.id.includes(item.id));
+  var details = metadata.filter((resource) => resource.id.includes(item.id));
   // hier die Informationen eintragen
   var author = createNode('p');
   author.innerHTML = details[0].author;
@@ -123,12 +91,26 @@ function handleMetadata (item) {
   item.firstChild.firstChild.setAttribute('style', 'opacity: 0.75;');
 }
 
-// create display of given facets
-function displayFacets (facets) {
-  for (var key in facets) {
-    var uniqueValues = getUniqueValues(metadata, key);
-    addFacet(key, uniqueValues);
-  }
+// add given resource to given grid
+function addResource (grid, resource) {
+  var li = createNode('li');
+  li.id = resource.id;
+  var figure = createNode('figure');
+  var img = createNode('img');
+  img.src = resource.image;
+  figure.appendChild(img);
+  li.appendChild(figure);
+  li.onclick = function () { handleMetadata(this); };
+  grid.appendChild(li);
+}
+
+// create grid display with given resources
+function displayGrid (resources) {
+  var grid = document.getElementById('oer');
+  grid.innerHTML = ''; // ensure empty grid
+  resources.forEach(function (resource) {
+    addResource(grid, resource);
+  });
 }
 
 // add given facet with its values
@@ -144,24 +126,24 @@ function addFacet (facet, values) {
   header.appendChild(h2);
   var header2 = createNode('header');
   var ol = createNode('ol', null, 'facetList box');
-  for (var f in values) {
-    var li = createNode('li');
-    var div = createNode('div', null, 'add-facet');
-    var input = createNode('input', values[f].toLowerCase(), null, 'checkbox');
+  Object.keys(values).forEach(function (f) {
+    const li = createNode('li');
+    const div = createNode('div', null, 'add-facet');
+    const input = createNode('input', values[f].toLowerCase(), null, 'checkbox');
     input.setAttribute('name', facet);
     input.setAttribute('value', values[f].toLowerCase());
     div.appendChild(input);
-    var label = createNode('label');
+    const label = createNode('label');
     label.setAttribute('for', values[f].toLowerCase());
     label.innerHTML = values[f];
     div.appendChild(label);
     li.appendChild(div);
     ol.appendChild(li);
-  }
+  });
   header2.appendChild(ol);
   if (Object.keys(facets).indexOf(facet) === Object.keys(facets).length - 1) {
-    div = createNode('div', null, 'facetShowAll box clearfix');
-    input = createNode('input', 'submit-facet', 'facet-submit slub-button right', 'submit');
+    const div = createNode('div', null, 'facetShowAll box clearfix');
+    const input = createNode('input', 'submit-facet', 'facet-submit slub-button right', 'submit');
     input.setAttribute('onclick', 'faceting()');
     input.setAttribute('value', 'Anwenden');
     div.appendChild(input);
@@ -171,33 +153,53 @@ function addFacet (facet, values) {
   article.appendChild(header);
 }
 
+// create display of given facets
+function displayFacets (facets) {
+  Object.keys(facets).forEach(function (key) {
+    var uniqueValues = getUniqueValues(metadata, key);
+    addFacet(key, uniqueValues);
+  });
+}
+
+// initialize content and create display
+function init () {
+  loadJSON('assets/data/content.json', function (response) {
+    metadata = JSON.parse(response);
+    displayGrid(metadata);
+    loadJSON('assets/data/facets.json', function (response) {
+      facets = JSON.parse(response);
+      displayFacets(facets);
+    });
+  });
+}
+
 // filter resources by user selected facets
 function faceting () {
   var selection = [];
-  for (var key in facets) {
+  Object.keys(facets).forEach(function (key) {
     var checked = false;
     var facetSelection = [];
     var first = Object.keys(facets).indexOf(key) === 0;
     var uniqueValues = getUniqueValues(metadata, key);
-    for (var i in uniqueValues) {
+    Object.keys(uniqueValues).forEach(function (i) {
       var facetChecked = document.getElementById(uniqueValues[i].toLowerCase()).checked;
       if (facetChecked) {
         checked = true;
         if (first) {
-          selection.push.apply(selection, metadata.filter(resource => resource[key].includes(uniqueValues[i])));
+          selection.push.apply(selection, metadata.filter((resource) => resource[key].includes(uniqueValues[i])));
         } else {
-          facetSelection.push.apply(facetSelection, selection.filter(resource => resource[key].includes(uniqueValues[i])));
+          facetSelection.push.apply(facetSelection, selection.filter((resource) => resource[key].includes(uniqueValues[i])));
         }
       }
-    }
-    if (!checked & first) {
+    });
+    if (!checked && first) {
       selection.push.apply(selection, metadata);
     }
-    if (checked & !first) {
+    if (checked && !first) {
       selection = facetSelection;
     }
-  }
-  selection = selection.filter((v, i, a) => a.findIndex(t => (t.id === v.id)) === i);
+  });
+  selection = selection.filter((v, i, a) => a.findIndex((t) => (t.id === v.id)) === i);
   displayGrid(selection);
 }
 
