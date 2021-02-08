@@ -192,10 +192,10 @@ function faceting () {
         }
       }
     });
-    if (!checked & first) {
+    if (!checked && first) {
       selection.push.apply(selection, metadata);
     }
-    if (checked & !first) {
+    if (checked && !first) {
       selection = facetSelection;
     }
   });
