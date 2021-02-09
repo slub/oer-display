@@ -161,6 +161,8 @@ function displayFacets (facets) {
   });
 }
 
+/* eslint-disable no-unused-vars */
+
 // initialize content and create display
 function init () {
   loadJSON('assets/data/content.json', (response) => {
@@ -202,6 +204,3 @@ function faceting () {
   selection = selection.filter((v, i, a) => a.findIndex((t) => (t.id === v.id)) === i);
   displayGrid(selection);
 }
-
-window.init = init;
-window.faceting = faceting;
