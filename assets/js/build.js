@@ -9,7 +9,7 @@ function loadJSON (path, func) {
   var xobj = new XMLHttpRequest();
   xobj.overrideMimeType('application/json');
   xobj.open('GET', path, true);
-  xobj.onreadystatechange = function () {
+  xobj.onreadystatechange = () => {
     if (xobj.readyState === 4 && xobj.status === 200) {
       func(xobj.responseText);
     }
@@ -39,9 +39,9 @@ function insertAfter (referenceNode, newNode) {
 
 // get unique values of object field in array specified by key
 function getUniqueValues (array, key) {
-  var values = array.map(function (o) { return o[key]; });
+  var values = array.map((o) => o[key]);
   values = [].concat.apply([], values); // flatten nested array
-  values = values.filter(function (v, i) { return values.indexOf(v) === i; });
+  values = values.filter((v, i) => values.indexOf(v) === i);
   values.sort();
   return values;
 }
@@ -126,16 +126,16 @@ function addFacet (facet, values) {
   header.appendChild(h2);
   var header2 = createNode('header');
   var ol = createNode('ol', null, 'facetList box');
-  Object.keys(values).forEach(function (f) {
+  values.forEach((value) => {
     const li = createNode('li');
     const div = createNode('div', null, 'add-facet');
-    const input = createNode('input', values[f].toLowerCase(), null, 'checkbox');
+    const input = createNode('input', value.toLowerCase(), null, 'checkbox');
     input.setAttribute('name', facet);
-    input.setAttribute('value', values[f].toLowerCase());
+    input.setAttribute('value', value.toLowerCase());
     div.appendChild(input);
     const label = createNode('label');
-    label.setAttribute('for', values[f].toLowerCase());
-    label.innerHTML = values[f];
+    label.setAttribute('for', value.toLowerCase());
+    label.innerHTML = value;
     div.appendChild(label);
     li.appendChild(div);
     ol.appendChild(li);
@@ -155,7 +155,7 @@ function addFacet (facet, values) {
 
 // create display of given facets
 function displayFacets (facets) {
-  Object.keys(facets).forEach(function (key) {
+  Object.keys(facets).forEach((key) => {
     var uniqueValues = getUniqueValues(metadata, key);
     addFacet(key, uniqueValues);
   });
@@ -163,10 +163,10 @@ function displayFacets (facets) {
 
 // initialize content and create display
 function init () {
-  loadJSON('assets/data/content.json', function (response) {
+  loadJSON('assets/data/content.json', (response) => {
     metadata = JSON.parse(response);
     displayGrid(metadata);
-    loadJSON('assets/data/facets.json', function (response) {
+    loadJSON('assets/data/facets.json', (response) => {
       facets = JSON.parse(response);
       displayFacets(facets);
     });
@@ -176,19 +176,19 @@ function init () {
 // filter resources by user selected facets
 function faceting () {
   var selection = [];
-  Object.keys(facets).forEach(function (key) {
+  Object.keys(facets).forEach((key) => {
     var checked = false;
     var facetSelection = [];
     var first = Object.keys(facets).indexOf(key) === 0;
     var uniqueValues = getUniqueValues(metadata, key);
-    Object.keys(uniqueValues).forEach(function (i) {
-      var facetChecked = document.getElementById(uniqueValues[i].toLowerCase()).checked;
+    uniqueValues.forEach((value) => {
+      var facetChecked = document.getElementById(value.toLowerCase()).checked;
       if (facetChecked) {
         checked = true;
         if (first) {
-          selection.push.apply(selection, metadata.filter((resource) => resource[key].includes(uniqueValues[i])));
+          selection.push.apply(selection, metadata.filter((resource) => resource[key].includes(value)));
         } else {
-          facetSelection.push.apply(facetSelection, selection.filter((resource) => resource[key].includes(uniqueValues[i])));
+          facetSelection.push.apply(facetSelection, selection.filter((resource) => resource[key].includes(value)));
         }
       }
     });
