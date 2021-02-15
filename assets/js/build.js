@@ -48,22 +48,16 @@ function getUniqueValues (array, key) {
 
 // add metadata of item to grid or remove it
 function handleMetadata (item) {
-  if (document.contains(document.getElementById('metadata'))) {
-    if (item.nextSibling !== null) {
-      if (item.nextSibling.hasAttribute('id')) {
-        if (item.nextSibling.id === 'metadata') {
-          item.firstChild.firstChild.removeAttribute('style');
-          item.nextSibling.remove();
-          return;
-        }
-      }
-    }
-    // var prev = document.getElementById('metadata');
+  if (document.contains(document.getElementById(item.id.concat('_metadata')))) {
+    item.firstChild.firstChild.removeAttribute('style');
+    item.nextSibling.remove();
+    return;
+    // var prev = document.getElementById(item.id.concat('_metadata'));
     // prev.previousSibling.firstChild.firstChild.removeAttribute('style');
     // prev.remove();
   }
   var li = createNode('li');
-  li.id = 'metadata';
+  li.id = item.id.concat('_metadata');
   var details = metadata.filter((resource) => resource.id.includes(item.id));
   // hier die Informationen eintragen
   var author = createNode('p');
