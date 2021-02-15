@@ -46,7 +46,7 @@ function getUniqueValues (array, key) {
   return values;
 }
 
-// add metadata of item to grid or remove it
+// add metadata of item to grid or remove it if already present
 function handleMetadata (item) {
   if (document.contains(document.getElementById(item.id.concat('_metadata')))) {
     item.firstChild.firstChild.removeAttribute('style');
