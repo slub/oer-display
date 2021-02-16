@@ -52,10 +52,12 @@ function handleMetadata (item) {
     item.firstChild.firstChild.removeAttribute('style');
     item.nextSibling.remove();
     return;
-    // var prev = document.getElementById(item.id.concat('_metadata'));
-    // prev.previousSibling.firstChild.firstChild.removeAttribute('style');
-    // prev.remove();
   }
+  //  if (document.contains(document.querySelector('[id$="_metadata"]'))) {
+  //    var prev = document.querySelector('[id$="_metadata"]');
+  //    prev.previousSibling.firstChild.firstChild.removeAttribute('style');
+  //    prev.remove();
+  //  }
   var li = createNode('li');
   li.id = item.id.concat('_metadata');
   var details = metadata.filter((resource) => resource.id.includes(item.id));
