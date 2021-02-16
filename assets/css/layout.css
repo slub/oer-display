@@ -62,7 +62,7 @@ li[id$="metadata"] {
   background-color: #f2fafa;
 }
 
-#metadata-url {
+a[id$="metadata-url"] {
   /* .results .seperator .result-button-group .result-button.fulltext */
   background: url('https://katalog.slub-dresden.de/typo3conf/ext/slub_katalog_beta/Resources/Public/Images/directlink.svg') no-repeat center center;
   background-size: 80% 80%;
@@ -78,7 +78,7 @@ li[id$="metadata"] {
 
 @media (min-width: 992px) {
   /* .results .seperator .result-button-group .result-button */
-  #metadata-url {
+  a[id$="metadata-url"] {
     -webkit-transition: all 150ms cubic-bezier(0.16, -0.5, 0.14, 3);
     -moz-transition: all 150ms cubic-bezier(0.16, -0.5, 0.14, 3);
     -ms-transition: all 150ms cubic-bezier(0.16, -0.5, 0.14, 3);
@@ -86,7 +86,7 @@ li[id$="metadata"] {
     transition: all 150ms cubic-bezier(0.16, -0.5, 0.14, 3);
     transform: scale(1);
   }
-  #metadata-url:hover {
+  a[id$="metadata-url"]:hover {
     transform: scale(1.4);
   }
 }
