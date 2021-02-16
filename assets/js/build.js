@@ -78,7 +78,7 @@ function handleMetadata (item) {
   date.innerHTML = details[0].date;
   li.appendChild(date);
   var url = createNode('a');
-  url.id = 'metadata-url';
+  url.id = item.id.concat('_metadata-url');
   url.title = 'Link zur Online-Ressource';
   url.href = details[0].url;
   url.target = '_blank';
