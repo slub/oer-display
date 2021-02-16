@@ -58,7 +58,7 @@ img {
   opacity: 0.75;
 }
 
-#metadata {
+li[id$="metadata"] {
   background-color: #f2fafa;
 }
 
