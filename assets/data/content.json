@@ -215,5 +215,17 @@
     "date": "2021",
     "license": null,
     "url": "https://open.spotify.com/show/74WNJ3nI9GpmYirRqIzkOe"
+  }, {
+    "id": "OER_019",
+    "title": "Wo muss ich da jetzt klciken? - Ein Leitfaden zur progressiven studentischen Veranstaltungsaufzeichnung mit Theorie und Praxis",
+    "author": "Kai Witza, Cornell Ziepel, Jennifer Vaupel",
+    "institution": "TUD",
+    "media": ["Text"],
+    "subject": "OER-Methodik",
+    "plattform": "Website",
+    "image": "assets/img/tuuwi-beitrag.png",
+    "date": "2021",
+    "license": "CC BY-SA",
+    "url": "https://tuuwi.de/wp-content/uploads/Wo-muss-ich-da-jetzt-klicken.pdf"
   }
 ]
