@@ -70,11 +70,13 @@ function handleMetadata (item) {
   var title = createNode('p');
   title.innerHTML = details[0].title;
   li.appendChild(title);
-  var institution = createNode('p');
-  var emphasis = createNode('em');
-  emphasis.innerHTML = details[0].institution;
-  institution.appendChild(emphasis);
-  li.appendChild(institution);
+  if (typeof details[0].institution !== 'undefined') {
+    var institution = createNode('p');
+    var emphasis = createNode('em');
+    emphasis.innerHTML = details[0].institution;
+    institution.appendChild(emphasis);
+    li.appendChild(institution);
+  }
   var date = createNode('p');
   date.innerHTML = details[0].date;
   li.appendChild(date);
