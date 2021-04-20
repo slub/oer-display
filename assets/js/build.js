@@ -42,6 +42,7 @@ function getUniqueValues (array, key) {
   var values = array.map((o) => o[key]);
   values = [].concat.apply([], values); // flatten nested array
   values = values.filter((v, i) => values.indexOf(v) === i);
+  values = values.filter((v) => v);
   values.sort();
   return values;
 }
@@ -123,9 +124,6 @@ function addFacet (facet, values) {
   var header2 = createNode('header');
   var ol = createNode('ol', null, 'facetList box');
   values.forEach((value) => {
-    if (value === "") {
-      return;
-    }
     const li = createNode('li');
     const div = createNode('div', null, 'add-facet');
     const input = createNode('input', value.toLowerCase(), null, 'checkbox');
@@ -183,9 +181,6 @@ function faceting () {
     var first = Object.keys(facets).indexOf(key) === 0;
     var uniqueValues = getUniqueValues(metadata, key);
     uniqueValues.forEach((value) => {
-      if (value === "") {
-        return;
-      }
       var facetChecked = document.getElementById(value.toLowerCase()).checked;
       if (facetChecked) {
         checked = true;
