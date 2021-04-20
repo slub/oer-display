@@ -70,7 +70,7 @@ function handleMetadata (item) {
   var title = createNode('p');
   title.innerHTML = details[0].title;
   li.appendChild(title);
-  if (typeof details[0].institution !== 'undefined') {
+  if (details[0].institution !== undefined) {
     var institution = createNode('p');
     var emphasis = createNode('em');
     emphasis.innerHTML = details[0].institution;
