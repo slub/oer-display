@@ -42,6 +42,7 @@ function getUniqueValues (array, key) {
   var values = array.map((o) => o[key]);
   values = [].concat.apply([], values); // flatten nested array
   values = values.filter((v, i) => values.indexOf(v) === i);
+  values = values.filter((v) => v);
   values.sort();
   return values;
 }
@@ -69,11 +70,13 @@ function handleMetadata (item) {
   var title = createNode('p');
   title.innerHTML = details[0].title;
   li.appendChild(title);
-  var institution = createNode('p');
-  var emphasis = createNode('em');
-  emphasis.innerHTML = details[0].institution;
-  institution.appendChild(emphasis);
-  li.appendChild(institution);
+  if (details[0].institution !== undefined) {
+    var institution = createNode('p');
+    var emphasis = createNode('em');
+    emphasis.innerHTML = details[0].institution;
+    institution.appendChild(emphasis);
+    li.appendChild(institution);
+  }
   var date = createNode('p');
   date.innerHTML = details[0].date;
   li.appendChild(date);

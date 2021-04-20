@@ -227,5 +227,17 @@
     "date": "2021",
     "license": "CC BY-SA",
     "url": "https://tuuwi.de/wp-content/uploads/Wo-muss-ich-da-jetzt-klicken.pdf"
+  }, {
+    "id": "OER_020",
+    "title": "Checkliste für Lernvideos. Mit didaktischen Hinweisen.",
+    "author": "Frank Waldschmidt-Dietz",
+    "institution": "",
+    "media": ["Text"],
+    "subject": "OER-Methodik",
+    "plattform": "Website",
+    "image": "assets/img/oer-checkliste.jpg",
+    "date": "2021",
+    "license": "CC BY",
+    "url": "assets/img/Checkliste-Lernvideos-Farbe.pdf"
   }
 ]
