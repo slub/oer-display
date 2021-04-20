@@ -183,6 +183,9 @@ function faceting () {
     var first = Object.keys(facets).indexOf(key) === 0;
     var uniqueValues = getUniqueValues(metadata, key);
     uniqueValues.forEach((value) => {
+      if (value === "") {
+        return;
+      }
       var facetChecked = document.getElementById(value.toLowerCase()).checked;
       if (facetChecked) {
         checked = true;
