@@ -123,6 +123,9 @@ function addFacet (facet, values) {
   var header2 = createNode('header');
   var ol = createNode('ol', null, 'facetList box');
   values.forEach((value) => {
+    if (value === "") {
+      return;
+    }
     const li = createNode('li');
     const div = createNode('div', null, 'add-facet');
     const input = createNode('input', value.toLowerCase(), null, 'checkbox');
