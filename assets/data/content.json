@@ -239,5 +239,17 @@
     "date": "2021",
     "license": "CC BY",
     "url": "assets/img/Checkliste-Lernvideos-Farbe.pdf"
+  }, {
+    "id": "OER_021",
+    "title": "URV Bildung neu denken: 03_Open Educational Resources",
+    "author": "Tom Stieler, Alexander Lasch",
+    "institution": "TUD",
+    "media": ["Video"],
+    "subject": "OER-Methodik",
+    "plattform": "Videocampus",
+    "image": "assets/img/oer-urv.jpg",
+    "date": "2021",
+    "license": "CC BY-SA",
+    "url": "https://videocampus.sachsen.de/video/URV-Bildung-neu-denken-03Open-Educational-Resources/8511f6f449990375e6e8720c2f35ef38"
   }
 ]
