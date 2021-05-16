@@ -113,3 +113,9 @@ a[id$="metadata-url"] {
     width: 140px;
   }
 }
+
+@media (min-width: 351px) and (max-width: 390px) {
+#tu {
+    display: none;
+  }
+}
