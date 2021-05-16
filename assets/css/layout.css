@@ -2,6 +2,22 @@
     background: rgba(153,204,221,0.6)
 }
 
+@media (min-width: 375px) {
+  .navbar-resultlist #resultOptions {
+    height: 0px !important;
+  }
+}
+
+.navbar-resultlist .resultCount {
+  height: 0 !important;
+}
+
+@media (min-width: 768px) {
+  .navbar-resultlist .resultCount {
+    margin: 0 !important;
+  }
+}
+
 .displayText {
   line-height: 160%;
   
