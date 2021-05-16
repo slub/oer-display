@@ -18,6 +18,70 @@
   }
 }
 
+.displayBreadcrumb ol.rootline{
+    position:relative;
+    margin-top:12px;
+    padding:0;
+    opacity:.5;
+    color:#666;
+    list-style-type:none;
+    font-size:12px;
+    line-height:1.4
+}
+
+.displayBreadcrumb ol.rootline:hover{
+    opacity:1
+}
+
+.displayBreadcrumb ol.rootline li{
+    position:relative;
+    font-weight:normal;
+    padding:0 15px 0 0;
+    display:inline-block
+}
+
+.displayBreadcrumb ol.rootline li a{
+    color:#666;
+    font-weight:normal;
+    font-family:'VisSlabBold',Georgia,Times,serif
+}
+
+.displayBreadcrumb ol.rootline li:before{
+    content:none
+}
+
+.displayBreadcrumb ol.rootline li:after{
+    position:absolute;
+    top:50%;
+    right:5px;
+    width:4px;
+    height:4px;
+    margin-top:-2px;
+    border:solid #666;
+    border-width:1px 1px 0 0;
+    -webkit-transform:rotate(45deg);
+    transform:rotate(45deg);
+    content:" "
+}
+
+.displayBreadcrumb ol.rootline li:last-child{
+    padding:0
+}
+
+.displayBreadcrumb ol.rootline li:last-child:after{
+    content:none
+}
+
+.displayBreadcrumb ol{
+    margin:1.4em 0;
+    list-style:none;
+    counter-reset:countlii
+}
+
+.displayBreadcrumb .rootline a{
+    text-decoration:none
+}
+
 .displayText {
   line-height: 160%; 
 }
