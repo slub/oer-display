@@ -4,8 +4,9 @@ var metadata = [];
 var facets = {};
 
 /* global XMLHttpRequest */
+
 // request JSON file at path and pass response to given func
-function loadJSON (path, func) {
+function loadJSON(path, func) {
   var xobj = new XMLHttpRequest();
   xobj.overrideMimeType('application/json');
   xobj.open('GET', path, true);
@@ -18,7 +19,7 @@ function loadJSON (path, func) {
 }
 
 // create element node with given attributes
-function createNode (tag, id = null, className = null, type = null) {
+function createNode(tag, id = null, className = null, type = null) {
   var elem = document.createElement(tag);
   if (id !== null) {
     elem.setAttribute('id', id);
@@ -33,12 +34,12 @@ function createNode (tag, id = null, className = null, type = null) {
 }
 
 // add given newNode after given referenceNode
-function insertAfter (referenceNode, newNode) {
+function insertAfter(referenceNode, newNode) {
   referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
 }
 
 // get unique values of object field in array specified by key
-function getUniqueValues (array, key) {
+function getUniqueValues(array, key) {
   var values = array.map((o) => o[key]);
   values = [].concat.apply([], values); // flatten nested array
   values = values.filter((v, i) => values.indexOf(v) === i);
@@ -48,10 +49,12 @@ function getUniqueValues (array, key) {
 }
 
 // add metadata of item to grid or remove it if already present
-function handleMetadata (item) {
+function handleMetadata(item) {
   if (document.contains(document.getElementById(item.id.concat('_metadata')))) {
-    item.firstChild.firstChild.removeAttribute('style');
-    item.nextSibling.remove();
+    item.removeAttribute('class');
+    setTimeout(function () {
+      document.getElementById(item.id.concat('_metadata')).remove();
+    }, 300);
     return;
   }
   //  if (document.contains(document.querySelector('[id$="_metadata"]'))) {
@@ -59,39 +62,41 @@ function handleMetadata (item) {
   //    prev.previousSibling.firstChild.firstChild.removeAttribute('style');
   //    prev.remove();
   //  }
-  var li = createNode('li');
-  li.id = item.id.concat('_metadata');
+  var meta = createNode('figcaption');
+  meta.id = item.id.concat('_metadata');
   var details = metadata.filter((resource) => resource.id.includes(item.id));
   // hier die Informationen eintragen
   var author = createNode('p');
+  author.classList.add('author');
   author.innerHTML = details[0].author;
-  author.setAttribute('style', 'font-family: \'VisSansBold\', Helvetica, Arial, Sans-Serif;');
-  li.appendChild(author);
-  var title = createNode('p');
+  meta.appendChild(author);
+  var title = createNode('h3');
   title.innerHTML = details[0].title;
-  li.appendChild(title);
+  meta.appendChild(title);
   if (details[0].institution !== undefined) {
     var institution = createNode('p');
     var emphasis = createNode('em');
     emphasis.innerHTML = details[0].institution;
     institution.appendChild(emphasis);
-    li.appendChild(institution);
+    meta.appendChild(institution);
   }
   var date = createNode('p');
   date.innerHTML = details[0].date;
-  li.appendChild(date);
+  meta.appendChild(date);
   var url = createNode('a');
   url.id = item.id.concat('_metadata-url');
   url.title = 'Link zur Online-Ressource';
   url.href = details[0].url;
   url.target = '_blank';
-  li.appendChild(url);
-  insertAfter(item, li);
-  item.firstChild.firstChild.setAttribute('style', 'opacity: 0.75;');
+  meta.appendChild(url);
+  insertAfter(item.firstChild.firstChild, meta);
+  setTimeout(function () {
+    item.setAttribute('class', 'active');
+  }, 20);
 }
 
 // add given resource to given grid
-function addResource (grid, resource) {
+function addResource(grid, resource) {
   var li = createNode('li');
   li.id = resource.id;
   var figure = createNode('figure');
@@ -99,12 +104,14 @@ function addResource (grid, resource) {
   img.src = resource.image;
   figure.appendChild(img);
   li.appendChild(figure);
-  li.onclick = function () { handleMetadata(this); };
+  li.onclick = function () {
+    handleMetadata(this);
+  };
   grid.appendChild(li);
 }
 
 // create grid display with given resources
-function displayGrid (resources) {
+function displayGrid(resources) {
   var grid = document.getElementById('oer');
   grid.innerHTML = ''; // ensure empty grid
   resources.forEach(function (resource) {
@@ -113,7 +120,7 @@ function displayGrid (resources) {
 }
 
 // add given facet with its values
-function addFacet (facet, values) {
+function addFacet(facet, values) {
   var article = document.querySelector('.facet');
   var header = createNode('header');
   var h2 = createNode('h2', null, 'box');
@@ -153,7 +160,7 @@ function addFacet (facet, values) {
 }
 
 // create display of given facets
-function displayFacets (facets) {
+function displayFacets(facets) {
   Object.keys(facets).forEach((key) => {
     var uniqueValues = getUniqueValues(metadata, key);
     addFacet(key, uniqueValues);
@@ -163,7 +170,7 @@ function displayFacets (facets) {
 /* eslint-disable no-unused-vars */
 
 // initialize content and create display
-function init () {
+function init() {
   loadJSON('assets/data/content.json', (response) => {
     metadata = JSON.parse(response);
     displayGrid(metadata);
@@ -175,7 +182,7 @@ function init () {
 }
 
 // filter resources by user selected facets
-function faceting () {
+function faceting() {
   var selection = [];
   Object.keys(facets).forEach((key) => {
     var checked = false;
