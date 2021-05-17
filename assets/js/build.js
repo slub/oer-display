@@ -50,8 +50,8 @@ function getUniqueValues (array, key) {
 // add metadata of item to grid or remove it if already present
 function handleMetadata (item) {
   if (document.contains(document.getElementById(item.id.concat('_metadata')))) {
-    item.firstChild.firstChild.removeAttribute('style');
-    item.nextSibling.remove();
+    item.removeAttribute('class');
+    document.getElementById(item.id.concat('_metadata')).remove();
     return;
   }
   //  if (document.contains(document.querySelector('[id$="_metadata"]'))) {
@@ -59,35 +59,35 @@ function handleMetadata (item) {
   //    prev.previousSibling.firstChild.firstChild.removeAttribute('style');
   //    prev.remove();
   //  }
-  var li = createNode('li');
-  li.id = item.id.concat('_metadata');
+  var meta = createNode('figcaption');
+  meta.id = item.id.concat('_metadata');
   var details = metadata.filter((resource) => resource.id.includes(item.id));
   // hier die Informationen eintragen
   var author = createNode('p');
+  author.classList.add('author');
   author.innerHTML = details[0].author;
-  author.setAttribute('style', 'font-family: \'VisSansBold\', Helvetica, Arial, Sans-Serif;');
-  li.appendChild(author);
-  var title = createNode('p');
+  meta.appendChild(author);
+  var title = createNode('h3');
   title.innerHTML = details[0].title;
-  li.appendChild(title);
+  meta.appendChild(title);
   if (details[0].institution !== undefined) {
     var institution = createNode('p');
     var emphasis = createNode('em');
     emphasis.innerHTML = details[0].institution;
     institution.appendChild(emphasis);
-    li.appendChild(institution);
+    meta.appendChild(institution);
   }
   var date = createNode('p');
   date.innerHTML = details[0].date;
-  li.appendChild(date);
+  meta.appendChild(date);
   var url = createNode('a');
   url.id = item.id.concat('_metadata-url');
   url.title = 'Link zur Online-Ressource';
   url.href = details[0].url;
   url.target = '_blank';
-  li.appendChild(url);
-  insertAfter(item, li);
-  item.firstChild.firstChild.setAttribute('style', 'opacity: 0.75;');
+  meta.appendChild(url);
+  insertAfter(item.firstChild.firstChild, meta);
+  item.setAttribute('class', 'active');
 }
 
 // add given resource to given grid
