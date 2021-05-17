@@ -83,7 +83,7 @@
 }
 
 .displayText {
-  line-height: 160%; 
+  line-height: 160%;
 }
 
 .displayText > h1 {
@@ -123,6 +123,7 @@ img {
 }
 
 .oer-content > li > figure {
+  position: relative;
   background: rgba(242, 250, 250, 1);   /* rgba(0, 175, 200, 1); */
   height: 100%;
 }
@@ -131,14 +132,38 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: all .2s ease-in-out;
 }
 
 .oer-content > li > figure > img:hover {
   opacity: 0.75;
 }
 
-li[id$="metadata"] {
-  background-color: #f2fafa;
+.oer-content > li > figure figcaption {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #0d4b58;
+  transform: scaleX(0);
+  transition: all .2s ease-in-out;
+  color: white;
+  padding: 30px;
+}
+
+.oer-content > li.active > figure figcaption {
+ transform: scaleX(1);
+  opacity: 1;
+}
+
+.oer-content > li > figure figcaption h3 {
+  color: white;
+}
+
+.oer-content > li.active > figure > img {
+  transform: scaleX(0);
+  opacity: 0;
 }
 
 a[id$="metadata-url"] {
