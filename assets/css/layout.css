@@ -209,10 +209,6 @@ a[id$="metadata-url"] {
     white-space: nowrap;
     background: url(https://tu-dresden.de/++theme++tud.theme.webcms2/img/tud-logo.svg) no-repeat 0 0;
     background-size: 100%;
-    opacity: 0.0;
-}
-
-#tu:hover {
     opacity: 1.0;
 }
 
