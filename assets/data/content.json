@@ -251,5 +251,17 @@
     "date": "2021",
     "license": "CC BY-SA",
     "url": "https://videocampus.sachsen.de/video/URV-Bildung-neu-denken-03Open-Educational-Resources/8511f6f449990375e6e8720c2f35ef38"
+  }, {
+    "id": "OER_022",
+    "title": "Animationen zum Thema Baukonstruktionen bestehender Gebäude",
+    "author": "Juliane Wohlgemut, Iris Vogt und Christian Louter",
+    "institution": "TUD",
+    "media": ["Video"],
+    "subject": "Bauingenieurwesen",
+    "plattform": "Website",
+    "image": "assets/img/oer-bauko.jpg",
+    "date": "2021",
+    "license": "CC BY-NC-ND",
+    "url": "https://tu-dresden.de/bu/bauingenieurwesen/bauko/studium/oer-projects/oer-inhalte"
   }
 ]
