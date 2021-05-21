@@ -48,6 +48,15 @@ function getUniqueValues(array, key) {
   return values;
 }
 
+// join given value if it is given as an Array, i.e. non-null object
+function joinIfArray(value) {
+  if (typeof value === 'object' && value !== null) {
+    return value.join(", ")
+  } else {
+    return value;
+  }
+}
+
 // add metadata of item to grid or remove it if already present
 function handleMetadata(item) {
   if (document.contains(document.getElementById(item.id.concat('_metadata')))) {
@@ -76,7 +85,7 @@ function handleMetadata(item) {
   if (details[0].institution !== undefined) {
     var institution = createNode('p');
     var emphasis = createNode('em');
-    emphasis.innerHTML = details[0].institution;
+    emphasis.innerHTML = joinIfArray(details[0].institution);
     institution.appendChild(emphasis);
     meta.appendChild(institution);
   }
