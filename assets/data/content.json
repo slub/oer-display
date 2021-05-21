@@ -263,5 +263,17 @@
     "date": "2021",
     "license": "CC BY-NC-ND",
     "url": "https://tu-dresden.de/bu/bauingenieurwesen/bauko/studium/oer-projects/oer-inhalte"
+  }, {
+    "id": "OER_023",
+    "title": "Handreichung OER. Der Einstieg in den Umgang mit Open Educational Resources",
+    "author": "JProf. Dr. Anne Lauber-Rönsberg",
+    "institution": ["TUD","HTW Dresden","TUBAF"],
+    "media": ["Text"],
+    "subject": "OER-Methodik",
+    "plattform": "Website",
+    "image": "assets/img/oer-oersax.jpg",
+    "date": "2018",
+    "license": "CC BY-SA 4.0",
+    "url": "assets/img/Oersax_Broschuere_181212.pdf"
   }
 ]
