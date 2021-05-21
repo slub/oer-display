@@ -267,7 +267,7 @@
     "id": "OER_023",
     "title": "Handreichung OER. Der Einstieg in den Umgang mit Open Educational Resources",
     "author": "JProf. Dr. Anne Lauber-Rönsberg",
-    "institution": "OERsax",
+    "institution": ["TUD","HTW Dresden","TUBAF"],
     "media": ["Text"],
     "subject": "OER-Methodik",
     "plattform": "Website",
