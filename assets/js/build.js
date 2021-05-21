@@ -66,11 +66,6 @@ function handleMetadata(item) {
     }, 300);
     return;
   }
-  //  if (document.contains(document.querySelector('[id$="_metadata"]'))) {
-  //    var prev = document.querySelector('[id$="_metadata"]');
-  //    prev.previousSibling.firstChild.firstChild.removeAttribute('style');
-  //    prev.remove();
-  //  }
   var meta = createNode('figcaption');
   meta.id = item.id.concat('_metadata');
   var details = metadata.filter((resource) => resource.id.includes(item.id));
