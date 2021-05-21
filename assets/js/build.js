@@ -48,6 +48,15 @@ function getUniqueValues(array, key) {
   return values;
 }
 
+// join given value if it is given as an Array, i.e. non-null object
+function joinIfArray(value) {
+  if (typeof value === 'object' && value !== null) {
+    return value.join(", ")
+  } else {
+    return value;
+  }
+}
+
 // add metadata of item to grid or remove it if already present
 function handleMetadata(item) {
   if (document.contains(document.getElementById(item.id.concat('_metadata')))) {
@@ -57,11 +66,6 @@ function handleMetadata(item) {
     }, 300);
     return;
   }
-  //  if (document.contains(document.querySelector('[id$="_metadata"]'))) {
-  //    var prev = document.querySelector('[id$="_metadata"]');
-  //    prev.previousSibling.firstChild.firstChild.removeAttribute('style');
-  //    prev.remove();
-  //  }
   var meta = createNode('figcaption');
   meta.id = item.id.concat('_metadata');
   var details = metadata.filter((resource) => resource.id.includes(item.id));
@@ -76,7 +80,7 @@ function handleMetadata(item) {
   if (details[0].institution !== undefined) {
     var institution = createNode('p');
     var emphasis = createNode('em');
-    emphasis.innerHTML = details[0].institution;
+    emphasis.innerHTML = joinIfArray(details[0].institution);
     institution.appendChild(emphasis);
     meta.appendChild(institution);
   }
