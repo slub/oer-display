@@ -275,5 +275,17 @@
     "date": "2018",
     "license": "CC BY-SA 4.0",
     "url": "assets/img/Oersax_Broschuere_181212.pdf"
+  }, {
+    "id": "OER_024",
+    "title": "Einführung in XML und TEI",
+    "author": "Henriette Mehn",
+    "institution": ["SLUB Dresden"],
+    "media": ["Online-Kurs"],
+    "subject": "Digital Humanities",
+    "plattform": "OPAL",
+    "image": "assets/img/oer-xml-tei-mehn.png",
+    "date": "2021",
+    "license": "CC BY 4.0",
+    "url": "https://bildungsportal.sachsen.de/opal/auth/RepositoryEntry/17544740866"
   }
 ]
