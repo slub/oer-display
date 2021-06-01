@@ -299,5 +299,17 @@
     "date": "2020–2021",
     "license": "CC BY-SA 4.0",
     "url": "https://bildungsportal.sachsen.de/opal/auth/RepositoryEntry/28588310528"
+  }, {
+    "id": "OER_026",
+    "title": "Einführung ins wissenschaftliche Arbeiten",
+    "author": "Marlene Rummel",
+    "institution": ["TU Dresden"],
+    "media": ["Video"],
+    "subject": "Wissenschaftliches Arbeiten",
+    "plattform": "YouTube",
+    "image": "assets/img/oer-rummel.jpg",
+    "date": "2021",
+    "license": "CC BY",
+    "url": "https://www.youtube.com/playlist?list=PLuosJ7SdRW-KKBTfm4vfqYb_97mES3lUw"
   }
 ]
