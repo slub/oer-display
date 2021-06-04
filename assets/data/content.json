@@ -311,5 +311,17 @@
     "date": "2021",
     "license": "CC BY",
     "url": "https://www.youtube.com/playlist?list=PLuosJ7SdRW-KKBTfm4vfqYb_97mES3lUw"
+  }, {
+    "id": "OER_027",
+    "title": "Theoretische Elektrotechnik.Kursmaterialien zum Studiengang Elektrotechnik",
+    "author": "Hans Georg Krauthäuser",
+    "institution": ["TU Dresden"],
+    "media": ["Online-Kurs"],
+    "subject": "Elektrotechnik",
+    "plattform": "OPAL",
+    "image": "assets/img/oer-elektro.jpg",
+    "date": "2021",
+    "license": "CC BY 3.0 DE",
+    "url": "https://bildungsportal.sachsen.de/opal/auth/RepositoryEntry/27455913992/CourseNode/96763257052114"
   }
 ]
