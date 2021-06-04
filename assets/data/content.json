@@ -316,7 +316,7 @@
     "title": "Theoretische Elektrotechnik. Kursmaterialien zum Studiengang Elektrotechnik",
     "author": "Hans Georg Krauthäuser",
     "institution": ["TU Dresden"],
-    "media": ["Online-Kurs"],
+    "media": ["Online-Kurs", "Video"],
     "subject": "Elektrotechnik",
     "plattform": "OPAL",
     "image": "assets/img/oer-elektro.jpg",
