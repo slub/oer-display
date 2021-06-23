@@ -531,7 +531,7 @@ body > div.csc-default {
   position: relative;
   min-height: 100%;
   width: 100%;
-  background: url('../Images//slub_footer.svg') no-repeat center bottom;
+  background: url('../img/slub_footer.svg') no-repeat center bottom;
   background-size: 2200px auto;
 }
 @media screen and (min-width: 480px) {
@@ -627,7 +627,7 @@ a {
   overflow: hidden;
   text-indent: 100%;
   white-space: nowrap;
-  background: url('../Images/slublogo.svg') no-repeat 0 0;
+  background: url('../img/slublogo.svg') no-repeat 0 0;
   background-size: 100%;
 }
 @media (min-width: 768px) {
@@ -876,7 +876,7 @@ ul.nav .open > a:hover {
   height: 300px;
   width: 100%;
   position: absolute;
-  background: url('../Images/search_background_net.svg') no-repeat 50% 0;
+  background: url('../img/search_background_net.svg') no-repeat 50% 0;
 }
 #search-background {
   height: 235px;
@@ -1659,7 +1659,7 @@ section.facets header h3:before {
   font-size: 13px;
   min-height: 18px;
   padding-left: 25px;
-  background: url('../Images/facet_checkbox.svg') no-repeat;
+  background: url('../img/facet_checkbox.svg') no-repeat;
   background-position: 0 0;
   overflow: hidden;
   white-space: normal;
