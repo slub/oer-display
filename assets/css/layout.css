@@ -174,7 +174,7 @@ img {
 
 a[id$="metadata-url"] {
   /* .results .seperator .result-button-group .result-button.fulltext */
-  background: #00afc8 url('https://katalog.slub-dresden.de/typo3conf/ext/slub_katalog_beta/Resources/Public/Images/directlink.svg') no-repeat center center;
+  background: #00afc8 url('../../vendor/img/directlink.svg') no-repeat center center;
   background-size: 80% 80%;
   /* .results .seperator .result-button-group .result-button */
   position: relative;
@@ -207,7 +207,7 @@ a[id$="metadata-url"] {
     overflow: hidden;
     text-indent: 100%;
     white-space: nowrap;
-    background: url(https://tu-dresden.de/++theme++tud.theme.webcms2/img/tud-logo.svg) no-repeat 0 0;
+    background: url(../../vendor/img/tud-logo.svg) no-repeat 0 0;
     background-size: 100%;
 }
 
